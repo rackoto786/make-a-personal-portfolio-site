@@ -210,6 +210,71 @@ class PortfolioTerminal {
         break;
       }
 
+      case 'projects': {
+        const flag = this.data.projects?.flagship;
+        const slots = this.data.projects?.otherSlots || [];
+        this.appendOutput(`
+          <div class="font-mono text-xs text-slate-300 space-y-2 my-2 border-l-2 border-sky-500 pl-3">
+            <p class="text-sky-300 font-bold">★ PROJET PHARE : ${flag?.title || 'FIARAmotion'} (${flag?.subtitle || ''})</p>
+            <p class="text-slate-400">Stack : ${flag?.stack?.join(', ') || ''}</p>
+            <p class="text-white font-semibold mt-2">Domaines complémentaires :</p>
+            ${slots.map(s => `<p class="text-slate-400">▸ <span class="text-slate-200">${s.title}</span> [${s.category}]</p>`).join('')}
+            <div class="pt-1">
+              <button onclick="window.openFlagshipModal()" class="px-2.5 py-1 rounded bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs">
+                Ouvrir FIARAmotion →
+              </button>
+            </div>
+          </div>
+        `);
+        break;
+      }
+
+      case 'certifications': {
+        const certs = this.data.certificationsSection?.categories || [];
+        this.appendOutput(`
+          <div class="font-mono text-xs text-slate-300 space-y-2 my-2 border-l-2 border-emerald-500 pl-3">
+            <p class="text-emerald-400 font-bold">Certifications & Formations Spécialisées (Section évolutive) :</p>
+            ${certs.map(c => `<p class="text-slate-400">▸ <span class="text-white font-semibold">${c.title}</span> : ${c.examples}</p>`).join('')}
+          </div>
+        `);
+        break;
+      }
+
+      case 'theme': {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('portfolio_theme', isDark ? 'dark' : 'light');
+        if (typeof window.updateThemeIcons === 'function') window.updateThemeIcons(isDark);
+        this.appendOutput(`<div class="font-mono text-xs text-sky-400 my-1">✓ Thème basculé en mode ${isDark ? 'Sombre (Dark)' : 'Clair (Light)'}.</div>`);
+        break;
+      }
+
+      case 'whoami':
+        this.appendOutput(`
+          <div class="font-mono text-xs text-slate-300 my-1 border-l-2 border-sky-400 pl-3">
+            <p><span class="text-sky-300">Utilisateur :</span> visiteur@narindra-rackoto.dev</p>
+            <p><span class="text-slate-400">Rôle :</span> Recruteur / Ingénieur / Collaborateur</p>
+            <p><span class="text-slate-400">Système hôte :</span> Linux Workstation (RackotoOS 2.6)</p>
+          </div>
+        `);
+        break;
+
+      case 'time': {
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString('fr-FR', { timeZone: 'Indian/Antananarivo' });
+        this.appendOutput(`<div class="font-mono text-xs text-sky-300 my-1">🕒 Heure de Madagascar (EAT / UTC+3) : ${timeStr}</div>`);
+        break;
+      }
+
+      case 'github':
+        window.open(this.data.profile.github, '_blank');
+        this.appendOutput(`<div class="font-mono text-xs text-sky-400 my-1">✓ Redirection vers GitHub : ${this.data.profile.github}</div>`);
+        break;
+
+      case 'linkedin':
+        window.open(this.data.profile.linkedin, '_blank');
+        this.appendOutput(`<div class="font-mono text-xs text-sky-400 my-1">✓ Redirection vers LinkedIn : ${this.data.profile.linkedin}</div>`);
+        break;
+
       case 'cv':
         if (typeof window.openResumeModal === 'function') {
           window.openResumeModal();

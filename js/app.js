@@ -113,9 +113,11 @@ function initParticleCanvas() {
   const ctx = canvas.getContext('2d');
   let width, height;
   let particles = [];
-  const particleCount = 45;
-  const maxDistance = 140;
+  const isMobile = window.innerWidth < 768;
+  const particleCount = isMobile ? 22 : 42;
+  const maxDistance = isMobile ? 110 : 140;
   let mouse = { x: -1000, y: -1000, radius: 150 };
+  let animationId = null;
 
   function resize() {
     width = canvas.width = window.innerWidth;
@@ -176,6 +178,11 @@ function initParticleCanvas() {
   }
 
   function animate() {
+    if (document.hidden) {
+      animationId = requestAnimationFrame(animate);
+      return;
+    }
+
     ctx.clearRect(0, 0, width, height);
 
     const isDark = document.documentElement.classList.contains('dark');
@@ -206,13 +213,23 @@ function initParticleCanvas() {
       p.draw();
     });
 
-    requestAnimationFrame(animate);
+    animationId = requestAnimationFrame(animate);
   }
   animate();
 }
 
-// --- Initialisation Principale au DOMContentLoaded ---
-document.addEventListener('DOMContentLoaded', () => {
+// --- Initialisation Principale Robuste & Hash Routing ---
+function checkUrlHash() {
+  const hash = (window.location.hash || '').toLowerCase();
+  if (hash === '#fiaramotion' || hash === '#case-study' || hash === '#projet-fiaramotion') {
+    if (typeof window.openFlagshipModal === 'function') window.openFlagshipModal();
+  } else if (hash === '#cv' || hash === '#resume' || hash === '#curriculum') {
+    if (typeof window.openResumeModal === 'function') window.openResumeModal();
+  }
+}
+window.addEventListener('hashchange', checkUrlHash);
+
+function initAll() {
   initParticleCanvas();
   initTheme();
   initSoundToggle();
@@ -235,6 +252,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initFlagshipCaseStudyModal();
   initLightboxModal();
 
+  // Deep linking URL hash
+  checkUrlHash();
+
   // Re-run Lucide icons
   if (window.lucide) {
     window.lucide.createIcons();
@@ -244,7 +264,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('terminal-card')) {
     window.activeTerminal = new PortfolioTerminal('terminal-card');
   }
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAll);
+} else {
+  initAll();
+}
 
 // --- Gestion du Thème Sombre / Clair ---
 function initTheme() {
@@ -271,28 +297,23 @@ function initTheme() {
 }
 
 function updateThemeIcons(isDark) {
-  const icon = document.getElementById('theme-icon');
-  if (!icon) return;
-  if (isDark) {
-    icon.setAttribute('data-lucide', 'sun');
-  } else {
-    icon.setAttribute('data-lucide', 'moon');
-  }
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  btn.innerHTML = `<i id="theme-icon" data-lucide="${isDark ? 'sun' : 'moon'}" class="w-4 h-4"></i>`;
   if (window.lucide) window.lucide.createIcons();
 }
+window.updateThemeIcons = updateThemeIcons;
 
 // --- Gestion des Effets Sonores ---
 function initSoundToggle() {
   const btn = document.getElementById('sound-toggle');
-  const icon = document.getElementById('sound-icon');
-  if (!btn || !icon) return;
+  if (!btn) return;
 
   function updateDisplay(enabled) {
+    btn.innerHTML = `<i id="sound-icon" data-lucide="${enabled ? 'volume-2' : 'volume-x'}" class="w-4 h-4 ${enabled ? 'text-sky-400' : ''}"></i>`;
     if (enabled) {
-      icon.setAttribute('data-lucide', 'volume-2');
       btn.classList.add('text-sky-400');
     } else {
-      icon.setAttribute('data-lucide', 'volume-x');
       btn.classList.remove('text-sky-400');
     }
     if (window.lucide) window.lucide.createIcons();
@@ -385,6 +406,7 @@ function renderHeroData() {
   document.querySelectorAll('.profile-name').forEach(el => el.textContent = p.name);
   document.querySelectorAll('.profile-title').forEach(el => el.textContent = p.title);
   document.querySelectorAll('.profile-location').forEach(el => el.textContent = p.location);
+  document.querySelectorAll('.profile-email').forEach(el => el.textContent = p.email);
 
   // Status Pill
   const statusEl = document.querySelector('.profile-status');
