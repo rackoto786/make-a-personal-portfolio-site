@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0b1329" />
+    </linearGradient>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#00d2ff" />
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#00d2ff" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0.8" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="400" height="400" rx="36" fill="url(#bgGrad)" />
+  
+  <!-- Outer Tech Border Ring -->
+  <rect x="12" y="12" width="376" height="376" rx="30" fill="none" stroke="url(#borderGrad)" stroke-width="2" stroke-dasharray="8 6" />
+
+  <!-- Subtle Cyber Grid -->
+  <g opacity="0.15" stroke="#38bdf8" stroke-width="1">
+    <line x1="50" y1="0" x2="50" y2="400" />
+    <line x1="100" y1="0" x2="100" y2="400" />
+    <line x1="150" y1="0" x2="150" y2="400" />
+    <line x1="200" y1="0" x2="200" y2="400" />
+    <line x1="250" y1="0" x2="250" y2="400" />
+    <line x1="300" y1="0" x2="300" y2="400" />
+    <line x1="350" y1="0" x2="350" y2="400" />
+    <line x1="0" y1="50" x2="400" y2="50" />
+    <line x1="0" y1="100" x2="400" y2="100" />
+    <line x1="0" y1="150" x2="400" y2="150" />
+    <line x1="0" y1="200" x2="400" y2="200" />
+    <line x1="0" y1="250" x2="400" y2="250" />
+    <line x1="0" y1="300" x2="400" y2="300" />
+    <line x1="0" y1="350" x2="400" y2="350" />
+  </g>
+
+  <!-- Glowing Background Orb -->
+  <circle cx="200" cy="180" r="110" fill="#2563eb" opacity="0.2" filter="url(#glow)" />
+
+  <!-- Stylized Engineer Silhouette / Tech Avatar -->
+  <g id="avatar-figure">
+    <!-- Shoulders / Torso -->
+    <path d="M 100 340 C 100 280, 140 250, 200 250 C 260 250, 300 280, 300 340 Z" fill="#1e293b" stroke="#3b82f6" stroke-width="3" />
+    <!-- Tech Jacket V-neck accent -->
+    <path d="M 160 255 L 200 305 L 240 255" fill="none" stroke="url(#primaryGrad)" stroke-width="3" stroke-linecap="round" />
+    
+    <!-- Neck -->
+    <rect x="180" y="210" width="40" height="45" rx="10" fill="#334155" />
+    
+    <!-- Head Base -->
+    <circle cx="200" cy="165" r="55" fill="#1e293b" stroke="#38bdf8" stroke-width="3" />
+    
+    <!-- Stylized Modern Geometric Glasses / HUD Display -->
+    <g id="hud-visor">
+      <rect x="155" y="145" width="38" height="22" rx="6" fill="#0284c7" opacity="0.8" stroke="#38bdf8" stroke-width="2" />
+      <rect x="207" y="145" width="38" height="22" rx="6" fill="#0284c7" opacity="0.8" stroke="#38bdf8" stroke-width="2" />
+      <line x1="193" y1="156" x2="207" y2="156" stroke="#38bdf8" stroke-width="2" />
+      <!-- Light Reflection on Glasses -->
+      <line x1="160" y1="150" x2="175" y2="162" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.7" />
+      <line x1="212" y1="150" x2="227" y2="162" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.7" />
+    </g>
+
+    <!-- Hair / Head Contour -->
+    <path d="M 145 160 C 145 110, 170 95, 200 95 C 230 95, 255 110, 255 160 C 250 120, 235 110, 200 110 C 165 110, 150 120, 145 160 Z" fill="#0f172a" stroke="#2563eb" stroke-width="2" />
+  </g>
+
+  <!-- Monogram Tech Crest -->
+  <g transform="translate(145, 332)">
+    <rect x="0" y="0" width="110" height="34" rx="17" fill="#0b1329" stroke="url(#primaryGrad)" stroke-width="2" />
+    <text x="55" y="22" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="14" fill="#ffffff" text-anchor="middle" letter-spacing="2">NR • 2026</text>
+  </g>
+
+  <!-- Interactive AI Node Dots around -->
+  <circle cx="90" cy="110" r="4" fill="#38bdf8" filter="url(#glow)" />
+  <circle cx="310" cy="120" r="5" fill="#2563eb" filter="url(#glow)" />
+  <circle cx="70" cy="240" r="3.5" fill="#00d2ff" />
+  <circle cx="330" cy="230" r="4" fill="#38bdf8" />
+  <line x1="90" y1="110" x2="150" y2="140" stroke="#38bdf8" stroke-width="1" stroke-dasharray="3 3" opacity="0.4" />
+  <line x1="310" y1="120" x2="250" y2="140" stroke="#2563eb" stroke-width="1" stroke-dasharray="3 3" opacity="0.4" />
+</svg>
