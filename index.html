@@ -1,14 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="fr" class="scroll-smooth dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alex Morgan | Senior Full-Stack Engineer & Architect</title>
-  <meta name="description" content="Senior Full-Stack Engineer and Distributed Systems Architect specializing in resilient cloud architectures, real-time collaboration engines, and polished web interfaces.">
-  <meta name="keywords" content="Software Engineer, Full Stack, Distributed Systems, Next.js, Go, TypeScript, Rust, Kubernetes, Cloud Architecture">
-  <meta property="og:title" content="Alex Morgan | Senior Full-Stack Engineer">
-  <meta property="og:description" content="Explore production projects, architectural case studies, technical skills, and interactive terminal.">
+  <title>Narindra Rackoto | Ingénieur en Informatique • Développeur Full Stack • AI & Automation</title>
+  
+  <meta name="description" content="Portfolio professionnel de Narindra Rackoto (Narindranjanahary RAKOTONINDRINA) - Ingénieur en informatique diplômé de l'ENI Fianarantsoa (Nov 2026). Développeur Full Stack, Intelligence Artificielle & Automatisation. Découvrez le projet phare FIARAmotion.">
+  <meta name="keywords" content="Narindra Rackoto, Narindranjanahary RAKOTONINDRINA, Ingénieur en informatique, Développeur Full Stack, ENI Fianarantsoa, FIARAmotion, Intelligence Artificielle, Python, Flask, React, TypeScript, PostgreSQL, PWA, Automatisation">
+  <meta name="author" content="Narindra Rackoto">
+
+  <!-- Open Graph / Meta Réseaux Sociaux -->
+  <meta property="og:title" content="Narindra Rackoto | Ingénieur en Informatique • Full Stack • AI & Automation">
+  <meta property="og:description" content="Diplômé d'un Master professionnel en Informatique à l'ENI Fianarantsoa (Novembre 2026). Étude de cas du projet FIARAmotion, compétences et réalisations.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/rackoto786">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Narindra Rackoto | Ingénieur en Informatique">
+  <meta name="twitter:description" content="Développeur Full Stack | Intelligence Artificielle & Automatisation | Master ENI 2026.">
+
+  <!-- Données Structurées Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Narindranjanahary RAKOTONINDRINA",
+    "alternateName": "Narindra Rackoto",
+    "jobTitle": "Ingénieur en informatique | Développeur Full Stack | AI & Automation",
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "École Nationale d'Informatique (ENI) de Fianarantsoa, Madagascar"
+    },
+    "knowsAbout": ["Full Stack Development", "Artificial Intelligence", "Python", "Flask", "React", "TypeScript", "PostgreSQL", "PWA", "Automation"],
+    "sameAs": [
+      "https://github.com/rackoto786",
+      "https://linkedin.com/in/narindra-rackoto-98222a3a6/"
+    ]
+  }
+  </script>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -19,17 +49,17 @@
         extend: {
           colors: {
             brand: {
-              50: '#f0fdf4',
-              100: '#dcfce7',
-              200: '#bbf7d0',
-              300: '#86efac',
-              400: '#4ade80',
-              500: '#10b981', // emerald
-              600: '#059669',
-              700: '#047857',
-              800: '#065f46',
-              900: '#064e3b',
-              accent: '#0ea5e9'
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6', // electric blue
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+              accent: '#38bdf8' // vibrant cyan
             }
           },
           fontFamily: {
@@ -41,86 +71,91 @@
     }
   </script>
 
-  <!-- Lucide Icons -->
+  <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- Canvas Confetti -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body class="bg-slate-50 dark:bg-[#070b14] text-slate-800 dark:text-slate-100 min-h-screen relative overflow-x-hidden selection:bg-brand-500 selection:text-white transition-colors duration-200">
+<body class="bg-slate-50 dark:bg-[#060913] text-slate-800 dark:text-slate-100 min-h-screen relative overflow-x-hidden selection:bg-brand-500 selection:text-white transition-colors duration-200">
 
-  <!-- Subtle Ambient Glow Orbs -->
-  <div class="glow-orb w-[600px] h-[600px] bg-emerald-500/20 -top-40 -left-40 dark:bg-emerald-600/10"></div>
-  <div class="glow-orb w-[500px] h-[500px] bg-sky-500/20 top-[40%] -right-40 dark:bg-sky-600/10"></div>
-  <div class="glow-orb w-[600px] h-[600px] bg-indigo-500/15 bottom-20 left-1/3 dark:bg-indigo-600/10"></div>
+  <!-- Interactive AI Neural Network / Particle Canvas -->
+  <canvas id="bg-canvas"></canvas>
 
-  <!-- Background Grid Pattern -->
+  <!-- Glowing Ambient Orbs (Bleu nuit & bleu électrique) -->
+  <div class="glow-orb w-[650px] h-[650px] bg-blue-600/15 -top-40 -left-40 dark:bg-blue-600/12"></div>
+  <div class="glow-orb w-[550px] h-[550px] bg-sky-500/15 top-[35%] -right-40 dark:bg-sky-500/10"></div>
+  <div class="glow-orb w-[600px] h-[600px] bg-indigo-600/15 bottom-20 left-1/4 dark:bg-indigo-600/10"></div>
+
+  <!-- Background Cyber Grid -->
   <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
 
   <!-- Toast Notification Container -->
   <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 max-w-sm w-full pointer-events-none"></div>
 
   <!-- ================= HEADER / NAVBAR ================= -->
-  <header class="sticky top-0 z-40 backdrop-blur-md bg-white/80 dark:bg-[#070b14]/85 border-b border-slate-200/80 dark:border-slate-800/80 transition-colors">
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-white/80 dark:bg-[#060913]/85 border-b border-slate-200/80 dark:border-slate-800/80 transition-colors">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       
-      <!-- Logo / Monogram -->
-      <a href="#" class="flex items-center gap-2.5 group">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-sky-500 flex items-center justify-center text-white font-mono font-bold text-sm shadow-md group-hover:scale-105 transition-transform">
-          AM
+      <!-- Monogram / Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-brand-500 to-sky-400 flex items-center justify-center text-white font-mono font-bold text-sm shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          NR
         </div>
         <div class="flex flex-col">
           <span class="font-bold text-sm sm:text-base tracking-tight text-slate-900 dark:text-white group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors profile-name">
-            Alex Morgan
+            Narindra Rackoto
           </span>
           <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400 leading-none">
-            Systems & Full-Stack
+            Ingénieur en Informatique • ENI 2026
           </span>
         </div>
       </a>
 
       <!-- Desktop Navigation Links -->
-      <nav class="hidden md:flex items-center gap-7 text-xs font-medium text-slate-600 dark:text-slate-300">
-        <a href="#about" class="nav-link hover:text-brand-500 dark:hover:text-brand-400 transition-colors">About</a>
-        <a href="#projects" class="nav-link hover:text-brand-500 dark:hover:text-brand-400 transition-colors">Projects</a>
-        <a href="#skills" class="nav-link hover:text-brand-500 dark:hover:text-brand-400 transition-colors">Skills</a>
-        <a href="#experience" class="nav-link hover:text-brand-500 dark:hover:text-brand-400 transition-colors">Experience</a>
+      <nav class="hidden md:flex items-center gap-6 text-xs font-medium text-slate-600 dark:text-slate-300">
+        <a href="#about" class="nav-link hover:text-brand-500 dark:hover:text-brand-400 transition-colors">À Propos</a>
+        <a href="#skills" class="nav-link hover:text-brand-500 dark:hover:text-brand-400 transition-colors">Compétences</a>
+        <a href="#projects" class="nav-link hover:text-brand-500 dark:hover:text-brand-400 transition-colors flex items-center gap-1.5">
+          <span>Projets</span>
+          <span class="px-1.5 py-0.2 rounded text-[10px] font-mono bg-sky-500/10 text-sky-400 border border-sky-500/20 font-bold">FIARA</span>
+        </a>
+        <a href="#experience" class="nav-link hover:text-brand-500 dark:hover:text-brand-400 transition-colors">Expériences</a>
+        <a href="#education" class="nav-link hover:text-brand-500 dark:hover:text-brand-400 transition-colors">Formation</a>
         <a href="#terminal-section" class="nav-link hover:text-brand-500 dark:hover:text-brand-400 transition-colors flex items-center gap-1">
           <i data-lucide="terminal" class="w-3.5 h-3.5 text-brand-500"></i>
-          <span>Terminal</span>
+          <span>Console</span>
         </a>
         <a href="#contact" class="nav-link hover:text-brand-500 dark:hover:text-brand-400 transition-colors">Contact</a>
       </nav>
 
-      <!-- Right Action Controls -->
+      <!-- Right Controls -->
       <div class="flex items-center gap-2 sm:gap-3">
-        <!-- Command Palette Trigger Button -->
-        <button type="button" class="open-command-palette hidden sm:flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700/80 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700/60 text-xs font-mono transition-colors" title="Command Palette (Cmd+K)">
+        <!-- Command Palette Trigger -->
+        <button type="button" class="open-command-palette hidden sm:flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700/80 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700/60 text-xs font-mono transition-colors" title="Recherche rapide (⌘K / Ctrl+K)">
           <i data-lucide="search" class="w-3.5 h-3.5"></i>
-          <span class="hidden lg:inline">Quick Search</span>
+          <span class="hidden lg:inline">Recherche</span>
           <kbd class="px-1.5 py-0.5 rounded bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-[10px] text-slate-500 dark:text-slate-400 font-semibold shadow-2xs">⌘K</kbd>
         </button>
 
         <!-- Sound FX Toggle -->
-        <button id="sound-toggle" type="button" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700/80 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700/60 transition-colors" title="Toggle UI Sound Effects">
+        <button id="sound-toggle" type="button" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700/80 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700/60 transition-colors" title="Activer / Désactiver les sons discrets">
           <i id="sound-icon" data-lucide="volume-x" class="w-4 h-4"></i>
         </button>
 
-        <!-- Theme Toggle (Dark / Light) -->
-        <button id="theme-toggle" type="button" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700/80 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700/60 transition-colors" title="Toggle Color Theme">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" type="button" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700/80 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700/60 transition-colors" title="Basculer le thème Sombre / Clair">
           <i id="theme-icon" data-lucide="sun" class="w-4 h-4"></i>
         </button>
 
-        <!-- Resume Modal Button -->
-        <button onclick="window.openResumeModal()" type="button" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 dark:bg-brand-500 hover:bg-slate-800 dark:hover:bg-brand-600 text-white text-xs font-semibold shadow-sm transition-all hover:scale-105">
+        <!-- View / Download CV Button -->
+        <button onclick="window.openResumeModal()" type="button" class="hidden sm:flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold shadow-sm shadow-brand-500/20 transition-all hover:scale-102">
           <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
-          <span>Resume</span>
+          <span>Mon CV</span>
         </button>
 
-        <!-- Mobile Menu Hamburger Button -->
+        <!-- Mobile Menu Hamburger -->
         <button id="mobile-menu-btn" type="button" class="md:hidden p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
           <i data-lucide="menu" class="w-5 h-5"></i>
         </button>
@@ -128,16 +163,17 @@
     </div>
 
     <!-- Mobile Dropdown Navigation -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#070b14]/95 px-4 py-4 space-y-3">
-      <a href="#about" class="block text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500">About</a>
-      <a href="#projects" class="block text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500">Projects</a>
-      <a href="#skills" class="block text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500">Skills</a>
-      <a href="#experience" class="block text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500">Experience</a>
-      <a href="#terminal-section" class="block text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500">Terminal</a>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#060913]/95 px-4 py-4 space-y-3">
+      <a href="#about" class="block text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500">À Propos</a>
+      <a href="#skills" class="block text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500">Compétences Techniques</a>
+      <a href="#projects" class="block text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500">Projet Phare FIARAmotion</a>
+      <a href="#experience" class="block text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500">Expériences</a>
+      <a href="#education" class="block text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500">Formation Académique (ENI)</a>
+      <a href="#terminal-section" class="block text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500">Console Interactive</a>
       <a href="#contact" class="block text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-brand-500">Contact</a>
       <div class="pt-2 flex gap-2">
-        <button onclick="window.openResumeModal()" class="w-full py-2 rounded-lg bg-brand-500 text-white text-xs font-bold text-center">View Resume</button>
-        <button class="open-command-palette w-full py-2 rounded-lg bg-slate-800 text-slate-200 text-xs font-bold text-center">⌘K Search</button>
+        <button onclick="window.openResumeModal()" class="w-full py-2 rounded-lg bg-brand-600 text-white text-xs font-bold text-center">Consulter mon CV</button>
+        <button class="open-command-palette w-full py-2 rounded-lg bg-slate-800 text-slate-200 text-xs font-bold text-center">Recherche ⌘K</button>
       </div>
     </div>
   </header>
@@ -145,140 +181,156 @@
   <!-- ================= MAIN CONTENT ================= -->
   <main class="relative z-10">
 
-    <!-- ================= HERO SECTION ================= -->
+    <!-- ================= SECTION 1: HERO / ACCUEIL ================= -->
     <section class="pt-16 pb-20 sm:pt-24 sm:pb-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         
         <!-- Left Hero Copy -->
         <div class="lg:col-span-7 space-y-6">
           
-          <!-- Availability Pill -->
-          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 text-xs font-mono">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 status-pulse"></span>
-            <span class="profile-status">Available for Q1/Q2 2027 projects & full-time roles</span>
+          <!-- Availability Pill & Master Badge -->
+          <div class="flex flex-wrap items-center gap-2">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 dark:bg-sky-500/15 border border-sky-500/30 text-sky-600 dark:text-sky-400 text-xs font-mono">
+              <span class="w-2 h-2 rounded-full bg-sky-400 status-pulse"></span>
+              <span class="profile-status">Disponible pour de nouveaux projets &amp; opportunités</span>
+            </div>
+
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full master-pill-glow text-sky-300 text-xs font-mono font-bold">
+              <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+              <span>Master Informatique ENI • Nov. 2026</span>
+            </div>
           </div>
 
-          <!-- Main Headline -->
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12]">
-            Architecting <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-teal-400 to-sky-500">resilient cloud systems</span> & fluid interfaces.
-          </h1>
+          <!-- Main Professional Title -->
+          <div class="space-y-2">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12]">
+              Narindra Rackoto
+            </h1>
+            <p class="text-lg sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-500 via-sky-400 to-cyan-300">
+              Ingénieur en informatique | Développeur Full Stack | AI &amp; Automation
+            </p>
+          </div>
 
-          <!-- Subtitle -->
-          <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
-            I'm <span class="font-semibold text-slate-900 dark:text-white profile-name">Alex Morgan</span> — a senior full-stack engineer and distributed systems architect. I specialize in real-time collaborative applications, high-throughput microservices, and sub-100ms web experiences.
+          <!-- Presentation Statement -->
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
+            Développeur passionné par l'intelligence artificielle et les nouvelles technologies, je suis diplômé d'un <strong class="text-slate-900 dark:text-white">Master professionnel en Informatique</strong> à l'<strong class="text-slate-900 dark:text-white">ENI Fianarantsoa</strong> (Novembre 2026). Je conçois des solutions logicielles performantes, intelligentes et pérennes adaptées aux réalités des entreprises.
           </p>
 
-          <!-- CTAs -->
+          <!-- 3 Boutons d'Action Clés -->
           <div class="flex flex-wrap items-center gap-3 pt-2">
-            <a href="#projects" class="px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold text-sm shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-0.5 transition-all flex items-center gap-2">
-              <span>Explore Projects</span>
+            <a href="#projects" class="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-0.5 transition-all flex items-center gap-2">
+              <span>Découvrir mes projets</span>
               <i data-lucide="arrow-down" class="w-4 h-4"></i>
             </a>
 
-            <a href="#contact" class="px-6 py-3 rounded-xl bg-white dark:bg-slate-800/90 hover:bg-slate-100 dark:hover:bg-slate-700/80 text-slate-800 dark:text-white font-semibold text-sm border border-slate-200 dark:border-slate-700/80 shadow-sm hover:-translate-y-0.5 transition-all flex items-center gap-2">
-              <i data-lucide="send" class="w-4 h-4 text-brand-500"></i>
-              <span>Get In Touch</span>
-            </a>
-
-            <button onclick="window.copyEmail()" type="button" class="px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800/40 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-mono border border-slate-200 dark:border-slate-700/60 transition-colors flex items-center gap-1.5" title="Copy Email">
-              <i data-lucide="copy" class="w-4 h-4 text-slate-400"></i>
-              <span>Copy Email</span>
+            <button onclick="window.openResumeModal()" type="button" class="px-6 py-3 rounded-xl bg-white dark:bg-slate-800/90 hover:bg-slate-100 dark:hover:bg-slate-700/80 text-slate-800 dark:text-white font-semibold text-sm border border-slate-200 dark:border-slate-700/80 shadow-sm hover:-translate-y-0.5 transition-all flex items-center gap-2">
+              <i data-lucide="file-text" class="w-4 h-4 text-brand-500"></i>
+              <span>Télécharger mon CV</span>
             </button>
+
+            <a href="#contact" class="px-6 py-3 rounded-xl bg-slate-100 dark:bg-slate-800/40 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-sm border border-slate-200 dark:border-slate-700/60 transition-colors flex items-center gap-2">
+              <i data-lucide="send" class="w-4 h-4 text-sky-400"></i>
+              <span>Me contacter</span>
+            </a>
           </div>
 
-          <!-- Socials & Location Row -->
+          <!-- Socials, Localisation & Live Clock -->
           <div class="pt-4 flex flex-wrap items-center gap-5 text-xs text-slate-500 dark:text-slate-400 font-mono">
             <div class="flex items-center gap-1.5">
               <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-500"></i>
-              <span class="profile-location">San Francisco, CA (Remote & Hybrid)</span>
+              <span class="profile-location">Madagascar</span>
             </div>
             <div class="flex items-center gap-1.5">
               <i data-lucide="clock" class="w-3.5 h-3.5 text-sky-400"></i>
-              <span id="local-clock">--:--:-- PT</span>
-              <span class="text-[10px] px-1.5 py-0.2 rounded bg-emerald-500/10 text-emerald-500 border border-emerald-500/20" id="work-status-text">Active</span>
+              <span id="local-clock">--:--:-- EAT (Madagascar)</span>
             </div>
             <div class="flex items-center gap-3">
-              <a href="https://github.com" target="_blank" rel="noopener" class="hover:text-slate-900 dark:hover:text-white transition-colors" title="GitHub">
+              <a href="https://github.com/rackoto786" target="_blank" rel="noopener" class="hover:text-slate-900 dark:hover:text-white transition-colors" title="GitHub : rackoto786">
                 <i data-lucide="github" class="w-4 h-4"></i>
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener" class="hover:text-slate-900 dark:hover:text-white transition-colors" title="LinkedIn">
+              <a href="https://linkedin.com/in/narindra-rackoto-98222a3a6/" target="_blank" rel="noopener" class="hover:text-slate-900 dark:hover:text-white transition-colors" title="LinkedIn : narindra-rackoto">
                 <i data-lucide="linkedin" class="w-4 h-4"></i>
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener" class="hover:text-slate-900 dark:hover:text-white transition-colors" title="Twitter/X">
-                <i data-lucide="twitter" class="w-4 h-4"></i>
               </a>
             </div>
           </div>
 
         </div>
 
-        <!-- Right Hero Interactive Card / Code Window -->
+        <!-- Right Hero Interactive Avatar & Engineering Card -->
         <div class="lg:col-span-5">
-          <div class="relative bg-white dark:bg-slate-900/90 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl p-6 backdrop-blur-xl">
+          <div class="relative bg-white dark:bg-[#0c1324] rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl p-6 sm:p-7 backdrop-blur-xl card-electric">
+            
             <!-- Window Titlebar -->
             <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-100 dark:border-slate-800">
               <div class="flex items-center gap-2">
                 <div class="w-3 h-3 rounded-full bg-rose-500/80"></div>
                 <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
                 <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
-                <span class="ml-2 text-xs font-mono text-slate-400">architect-profile.ts</span>
+                <span class="ml-2 text-xs font-mono text-slate-400">narindra-rackoto.profile</span>
               </div>
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-500/10 text-brand-500 dark:text-brand-400 border border-brand-500/20">TypeScript 5.7</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">Full Stack &amp; IA</span>
             </div>
 
-            <!-- Code snippet display -->
-            <pre class="font-mono text-xs sm:text-[13px] leading-relaxed text-slate-700 dark:text-slate-300 overflow-x-auto space-y-1">
-<code><span class="text-sky-500 dark:text-sky-400">interface</span> <span class="text-emerald-600 dark:text-emerald-400">SystemsArchitect</span> {
-  name: <span class="text-amber-600 dark:text-amber-300">'Alex Morgan'</span>;
-  role: <span class="text-amber-600 dark:text-amber-300">'Staff Full-Stack Engineer'</span>;
-  experienceYears: <span class="text-purple-600 dark:text-purple-400">6</span>;
-  coreStrengths: [
-    <span class="text-amber-600 dark:text-amber-300">'Distributed Consensus'</span>,
-    <span class="text-amber-600 dark:text-amber-300">'Real-Time WebSockets'</span>,
-    <span class="text-amber-600 dark:text-amber-300">'Sub-100ms Frontend UX'</span>
-  ];
-  currentMission: <span class="text-amber-600 dark:text-amber-300">'Scaling AI canvas workflows'</span>;
-  hireStatus: <span class="text-emerald-500 font-bold">Status.OPEN_FOR_OPPORTUNITIES</span>;
-}
+            <!-- Avatar & Bio Visual Preview -->
+            <div class="flex flex-col sm:flex-row items-center gap-5 pb-4">
+              <div class="relative w-28 h-28 shrink-0 rounded-2xl overflow-hidden border-2 border-sky-500/40 shadow-lg bg-slate-900 group">
+                <img id="hero-avatar-img" src="assets/avatar.svg" alt="Narindra Rackoto" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-sky-500/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-[10px] text-white font-mono text-center p-1 backdrop-blur-xs">
+                  Photo Profil
+                </div>
+              </div>
 
-<span class="text-slate-400">// Ready to collaborate? Let's build.</span>
-<span class="text-sky-500 dark:text-sky-400">export async function</span> <span class="text-purple-600 dark:text-purple-400">initiateProject</span>() {
-  <span class="text-sky-500 dark:text-sky-400">return await</span> deploySolutions({
-    quality: <span class="text-amber-600 dark:text-amber-300">'exceptional'</span>,
-    latency: <span class="text-amber-600 dark:text-amber-300">'minimal'</span>
-  });
-}</code></pre>
+              <div class="space-y-1 text-center sm:text-left">
+                <div class="font-bold text-base text-slate-900 dark:text-white">Narindranjanahary R.</div>
+                <div class="text-xs font-mono text-sky-400 font-semibold">Master Informatique (ENI 2026)</div>
+                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Conception de solutions numériques, automatisation et transformation digitale.
+                </p>
+              </div>
+            </div>
 
-            <!-- Bottom interactive badge -->
-            <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-mono">
-              <span class="text-slate-400">Ready to test?</span>
-              <button onclick="window.runTerminalCmd('sudo hire-alex')" class="px-3 py-1 rounded bg-brand-500/10 hover:bg-brand-500/20 text-brand-600 dark:text-brand-400 border border-brand-500/30 transition-colors flex items-center gap-1 font-semibold">
-                <span>Run hire-alex</span>
-                <i data-lucide="play" class="w-3 h-3"></i>
+            <!-- Quick Code / Metadata block -->
+            <pre class="font-mono text-xs sm:text-[12px] leading-relaxed text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-950 p-4 rounded-xl border border-slate-200 dark:border-slate-800/80 overflow-x-auto">
+<code><span class="text-sky-400">const</span> engineer = {
+  nom: <span class="text-amber-300">'Narindra Rackoto'</span>,
+  diplome: <span class="text-amber-300">'Master Pro Informatique Générale'</span>,
+  ecole: <span class="text-amber-300">'ENI Fianarantsoa'</span>,
+  obtention: <span class="text-emerald-400">'Novembre 2026'</span>,
+  flagship: <span class="text-amber-300">'FIARAmotion (CERES)'</span>,
+  stack: [<span class="text-sky-300">'React'</span>, <span class="text-sky-300">'Flask'</span>, <span class="text-sky-300">'PostgreSQL'</span>, <span class="text-sky-300">'AI'</span>]
+};</code></pre>
+
+            <!-- Bottom Interactive Action -->
+            <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-mono">
+              <span class="text-slate-400">Étude de cas FIARAmotion :</span>
+              <button onclick="window.openFlagshipModal()" class="px-3 py-1 rounded bg-sky-500/10 hover:bg-sky-500/20 text-sky-400 border border-sky-500/30 transition-colors flex items-center gap-1 font-semibold">
+                <span>Explorer le projet</span>
+                <i data-lucide="arrow-right" class="w-3 h-3"></i>
               </button>
             </div>
+
           </div>
         </div>
 
       </div>
 
-      <!-- Quick Metrics Bar -->
+      <!-- Quick Metrics Bar (Honnête & conforme) -->
       <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-sm text-center">
-          <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-mono">6+</div>
-          <div class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1">Years Experience</div>
+        <div class="p-5 rounded-2xl bg-white dark:bg-[#0c1324] border border-slate-200 dark:border-slate-800 shadow-sm text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold text-sky-400 font-mono">Nov. 2026</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1">Master Informatique (ENI)</div>
         </div>
-        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-sm text-center">
-          <div class="text-2xl sm:text-3xl font-extrabold text-brand-500 dark:text-brand-400 font-mono">40+</div>
-          <div class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1">Shipped Projects</div>
+        <div class="p-5 rounded-2xl bg-white dark:bg-[#0c1324] border border-slate-200 dark:border-slate-800 shadow-sm text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold text-brand-500 font-mono">Full Stack</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1">Frontend, Backend &amp; BD</div>
         </div>
-        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-sm text-center">
-          <div class="text-2xl sm:text-3xl font-extrabold text-sky-500 dark:text-sky-400 font-mono">250K+</div>
-          <div class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1">Active Production Users</div>
+        <div class="p-5 rounded-2xl bg-white dark:bg-[#0c1324] border border-slate-200 dark:border-slate-800 shadow-sm text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold text-indigo-400 font-mono">AI &amp; Auto</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1">LLM, RAG, n8n, Data</div>
         </div>
-        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 shadow-sm text-center">
-          <div class="text-2xl sm:text-3xl font-extrabold text-purple-500 dark:text-purple-400 font-mono">4.8k+</div>
-          <div class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1">GitHub Stars</div>
+        <div class="p-5 rounded-2xl bg-white dark:bg-[#0c1324] border border-slate-200 dark:border-slate-800 shadow-sm text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono">5 Rôles</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1">Architecture FIARAmotion</div>
         </div>
       </div>
 
@@ -287,673 +339,488 @@
     <!-- ================= TECH MARQUEE ================= -->
     <section class="py-6 border-y border-slate-200 dark:border-slate-800/80 bg-white/50 dark:bg-slate-900/40 backdrop-blur-sm overflow-hidden">
       <div class="flex animate-marquee gap-8 items-center text-xs sm:text-sm font-mono text-slate-600 dark:text-slate-400 font-semibold select-none">
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-brand-500"></span>TypeScript</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-sky-500"></span>Next.js 15</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-500"></span>React 19</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-teal-500"></span>Go (Golang)</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-orange-500"></span>Rust</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-500"></span>Node.js / Bun</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-indigo-500"></span>PostgreSQL</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-rose-500"></span>Redis</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-600"></span>Docker & K8s</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-amber-500"></span>AWS Cloud</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-pink-500"></span>GraphQL</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-cyan-500"></span>Tailwind CSS</span>
-        <!-- Duplicate for continuous stream -->
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-brand-500"></span>TypeScript</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-sky-500"></span>Next.js 15</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-500"></span>React 19</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-teal-500"></span>Go (Golang)</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-orange-500"></span>Rust</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-500"></span>Node.js / Bun</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-indigo-500"></span>PostgreSQL</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-rose-500"></span>Redis</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-600"></span>Docker & K8s</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-amber-500"></span>AWS Cloud</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-pink-500"></span>GraphQL</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-cyan-500"></span>Tailwind CSS</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-sky-400"></span>React.js</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-500"></span>TypeScript</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-400"></span>Python</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-cyan-400"></span>Flask REST API</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-indigo-500"></span>Django</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-400"></span>PostgreSQL</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-purple-400"></span>PWA (Progressive Web App)</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-teal-400"></span>Intelligence Artificielle &amp; Data</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-rose-400"></span>LLM &amp; RAG</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-amber-400"></span>n8n Automatisation</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-sky-500"></span>Docker &amp; Linux</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-600"></span>Tailwind CSS</span>
+        <!-- Duplication pour continuité du flux -->
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-sky-400"></span>React.js</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-500"></span>TypeScript</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-400"></span>Python</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-cyan-400"></span>Flask REST API</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-indigo-500"></span>Django</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-400"></span>PostgreSQL</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-purple-400"></span>PWA (Progressive Web App)</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-teal-400"></span>Intelligence Artificielle &amp; Data</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-rose-400"></span>LLM &amp; RAG</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-amber-400"></span>n8n Automatisation</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-sky-500"></span>Docker &amp; Linux</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-600"></span>Tailwind CSS</span>
       </div>
     </section>
 
-    <!-- ================= ABOUT SECTION ================= -->
+    <!-- ================= SECTION 2: À PROPOS ================= -->
     <section id="about" class="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-mono uppercase tracking-wider text-brand-600 dark:text-brand-400 font-bold bg-brand-500/10 px-3 py-1 rounded-full border border-brand-500/20">
-          Engineering Mindset
+        <span class="text-xs font-mono uppercase tracking-wider text-sky-600 dark:text-sky-400 font-bold bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/20">
+          Profil &amp; Vision
         </span>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-3">
-          Behind the Architecture
+          À Propos de Mon Parcours
         </h2>
-        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-3">
-          I combine systems engineering rigor with modern product intuition. Here are the core pillars that guide how I write software.
+        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+          Diplômé d'un Master professionnel en Informatique à l'École Nationale d'Informatique (ENI) de Fianarantsoa, je combine rigueur d'ingénierie logicielle, agilité Full Stack et curiosité active pour l'intelligence artificielle.
         </p>
       </div>
 
-      <!-- 3 Core Philosophy Pillars -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 shadow-sm hover:border-brand-500/50 transition-colors">
-          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-4">
-            <i data-lucide="zap" class="w-6 h-6"></i>
+      <!-- Présentation détaillée -->
+      <div class="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#0c1324] border border-slate-200 dark:border-slate-800 shadow-sm mb-12 card-electric">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center">
+              <i data-lucide="code-2" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">Développement Web &amp; Mobile</h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Expérience concrète dans la conception et l'implémentation d'applications web et mobiles réactives (React, TypeScript, PWA, Flask, Django).
+            </p>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Performance by Default</h3>
-          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-            Every millisecond counts. From optimized database queries and streaming server components to zero-bundle-overhead client primitives, speed is a core feature, not an afterthought.
-          </p>
-        </div>
 
-        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 shadow-sm hover:border-sky-500/50 transition-colors">
-          <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-500 flex items-center justify-center mb-4">
-            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
+              <i data-lucide="brain-circuit" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">IA &amp; Automatisation</h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Intérêt marqué pour l'intelligence artificielle (LLM, RAG, OCR, agents IA) et l'automatisation des processus métiers pour décupler l'efficacité.
+            </p>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Resilient Distributed Systems</h3>
-          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-            I build for failure tolerance, graceful degradation, and idempotent workflows. When unexpected traffic surges or network partitions occur, systems stay online and data stays consistent.
-          </p>
-        </div>
 
-        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 shadow-sm hover:border-purple-500/50 transition-colors">
-          <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center mb-4">
-            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+              <i data-lucide="database" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">Données &amp; Systèmes</h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Gestion et exploitation des bases de données relationnelles (PostgreSQL, MySQL), administration des systèmes Linux/Windows et sécurité réseau.
+            </p>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Craftsmanship & Polish</h3>
-          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-            Great software respects the human using it. Clean typography, comprehensive keyboard accessibility (WCAG 2.1 AAA), tactile feedback, and intuitive ergonomics elevate good software into memorable software.
-          </p>
         </div>
       </div>
 
-      <!-- Narrative Bio & Fast Facts -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        <div class="lg:col-span-7 bg-white dark:bg-slate-900/80 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-4">
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white">A Little More About Me</h3>
-          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-            Hello! I'm Alex. I started programming over a decade ago writing game mods and low-level Linux daemons. Over the past six years, that curiosity grew into building enterprise distributed cloud backends, high-throughput microservices, and slick developer tools.
-          </p>
-          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-            At my most recent role as Staff Engineer at CloudScale Labs, I led the core team that redesigned our multi-tenant real-time collaboration engine, serving over 150,000 daily active users while shrinking our cloud costs by more than $280,000 annually.
-          </p>
-          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-            I believe that great engineering happens when curiosity meets discipline. Whether writing clean RFCs, designing zero-downtime database migrations, or mentoring junior engineers, I strive to elevate every team I join.
-          </p>
-          <div class="pt-2 flex flex-wrap gap-3">
-            <button onclick="window.openResumeModal()" class="px-4 py-2 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold text-xs flex items-center gap-1.5 hover:opacity-90 transition-opacity">
-              <i data-lucide="file-text" class="w-4 h-4"></i>
-              <span>View Formal CV / Resume</span>
-            </button>
-            <a href="#contact" class="px-4 py-2 rounded-xl bg-brand-500/10 hover:bg-brand-500/20 text-brand-600 dark:text-brand-400 border border-brand-500/30 text-xs font-semibold flex items-center gap-1.5 transition-colors">
-              <i data-lucide="message-square" class="w-4 h-4"></i>
-              <span>Let's Talk Projects</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="lg:col-span-5 bg-white dark:bg-slate-900/80 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-4 font-mono">
-          <h4 class="text-xs uppercase tracking-wider text-slate-400 font-bold">Fast Facts Matrix</h4>
-          <div class="space-y-3 text-xs">
-            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800">
-              <span class="text-slate-400 block text-[11px]">Primary Focus</span>
-              <span class="text-slate-800 dark:text-slate-200 font-medium">Distributed Consensus & LLM Orchestration</span>
-            </div>
-            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800">
-              <span class="text-slate-400 block text-[11px]">Core Languages</span>
-              <span class="text-slate-800 dark:text-slate-200 font-medium">TypeScript, Go, Rust, Python, SQL</span>
-            </div>
-            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800">
-              <span class="text-slate-400 block text-[11px]">Terminal Setup</span>
-              <span class="text-slate-800 dark:text-slate-200 font-medium">Ghostty / WezTerm + Neovim + tmux</span>
-            </div>
-            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800">
-              <span class="text-slate-400 block text-[11px]">Outside of Coding</span>
-              <span class="text-slate-800 dark:text-slate-200 font-medium">Modular synthesizers, bouldering, sci-fi novels</span>
-            </div>
-          </div>
+      <!-- Les 6 Qualités Clés (Autonomie, Polyvalence, Analyse, etc.) -->
+      <div class="mb-4">
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6 text-center">
+          Qualités Humaines &amp; Professionnelles
+        </h3>
+        <div id="qualities-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Dynamically populated by app.js -->
         </div>
       </div>
+
     </section>
 
-    <!-- ================= PROJECTS SECTION ================= -->
-    <section id="projects" class="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- ================= SECTION 3: COMPÉTENCES TECHNIQUES ================= -->
+    <section id="skills" class="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/80">
       
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
         <div>
-          <span class="text-xs font-mono uppercase tracking-wider text-brand-600 dark:text-brand-400 font-bold bg-brand-500/10 px-3 py-1 rounded-full border border-brand-500/20">
-            Portfolio Showcase
+          <span class="text-xs font-mono uppercase tracking-wider text-sky-600 dark:text-sky-400 font-bold bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/20">
+            Expertise &amp; Technologies
           </span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-3">
-            Featured Systems & Applications
+            Compétences Techniques
           </h2>
-          <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-xl">
-            Selected open-source projects, high-scale architectures, and developer tooling. Click any project for architecture diagrams and engineering breakdowns.
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
+            Présentation interactive structurée par domaines, sans pourcentages artificiels.
           </p>
         </div>
 
-        <!-- Filter Buttons -->
-        <div class="flex flex-wrap gap-2 text-xs font-semibold">
-          <button type="button" data-filter="all" class="project-filter-btn px-3.5 py-1.5 rounded-lg bg-brand-500 text-white shadow-sm transition-all">
-            All Projects
-          </button>
-          <button type="button" data-filter="ai" class="project-filter-btn px-3.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
-            AI & Studio
-          </button>
-          <button type="button" data-filter="fullstack" class="project-filter-btn px-3.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
-            Full Stack SaaS
-          </button>
-          <button type="button" data-filter="systems" class="project-filter-btn px-3.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
-            Systems & CLI
-          </button>
-          <button type="button" data-filter="frontend" class="project-filter-btn px-3.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
-            Frontend & Creative
-          </button>
+        <!-- Recherche interactive de compétences -->
+        <div class="w-full md:w-80">
+          <div class="relative">
+            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+            <input id="skills-search" type="text" placeholder="Filtrer une compétence (ex: React, Python, RAG...)" class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white dark:bg-[#0c1324] border border-slate-200 dark:border-slate-800 text-xs sm:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all shadow-sm">
+          </div>
         </div>
       </div>
 
-      <!-- Dynamic Projects Grid Container -->
-      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-        <!-- Rendered dynamically by js/app.js -->
+      <!-- Skills Grid (6 Catégories) -->
+      <div id="skills-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered by app.js -->
       </div>
 
     </section>
 
-    <!-- ================= INTERACTIVE TERMINAL SECTION ================= -->
-    <section id="terminal-section" class="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <span class="text-xs font-mono uppercase tracking-wider text-brand-600 dark:text-brand-400 font-bold bg-brand-500/10 px-3 py-1 rounded-full border border-brand-500/20">
-          CLI Playground
+    <!-- ================= SECTION 4: PROJETS PROFESSIONNELS ================= -->
+    <section id="projects" class="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/80">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-mono uppercase tracking-wider text-sky-600 dark:text-sky-400 font-bold bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/20">
+          Réalisations &amp; Études de Cas
         </span>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-3">
-          Interactive MorganOS Terminal
+          Projets Professionnels
         </h2>
-        <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">
-          Prefer command-line interfaces? Query my background, tech stack, and trigger custom scripts right from this in-browser terminal emulator.
+        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-3">
+          Focus d'excellence sur le projet phare FIARAmotion et présentation d'espaces modulaires évolutifs.
         </p>
       </div>
 
-      <!-- Terminal Window Box -->
-      <div id="terminal-card" class="max-w-4xl mx-auto bg-slate-950 rounded-2xl border border-slate-800 shadow-2xl overflow-hidden font-mono text-xs sm:text-sm flex flex-col h-[460px] cursor-text">
-        <!-- Window Bar -->
-        <div class="bg-slate-900 px-4 py-3 border-b border-slate-800 flex items-center justify-between shrink-0 select-none">
-          <div class="flex items-center gap-2">
-            <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
-            <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
-            <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-            <span class="ml-2 text-xs text-slate-400 font-semibold">morgan-terminal (bash / zsh)</span>
-          </div>
-          <div class="flex items-center gap-2 text-[11px] text-slate-400">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 status-pulse"></span>
-            <span>tty1 (connected)</span>
-          </div>
-        </div>
-
-        <!-- Scrollable Output Region -->
-        <div class="terminal-output p-4 sm:p-6 overflow-y-auto flex-1 space-y-2 text-slate-300">
-          <!-- Populated by terminal.js -->
-        </div>
-
-        <!-- Terminal Input Prompt -->
-        <div class="p-4 bg-slate-900/70 border-t border-slate-800/80 flex items-center gap-2 shrink-0">
-          <span class="text-emerald-400 font-bold whitespace-nowrap">visitor@alex-morgan:<span class="text-sky-400">~</span>$</span>
-          <input type="text" class="terminal-input bg-transparent text-white font-mono text-xs sm:text-sm focus:outline-none flex-1 caret-emerald-400" placeholder="Type 'help' and press Enter..." autocomplete="off" spellcheck="false">
-          <span class="text-[10px] text-slate-500 hidden sm:inline">Press [Tab] to autocomplete</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= SKILLS SECTION ================= -->
-    <section id="skills" class="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-mono uppercase tracking-wider text-brand-600 dark:text-brand-400 font-bold bg-brand-500/10 px-3 py-1 rounded-full border border-brand-500/20">
-          Technical Arsenal
-        </span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-3">
-          Technologies & Competencies
-        </h2>
-        <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">
-          From systems programming in Go and Rust to pixel-perfect React micro-frontends and cloud infrastructure.
-        </p>
+      <!-- PROJET PRINCIPAL : FIARAmotion -->
+      <div id="flagship-project-container" class="mb-16">
+        <!-- Rendered by app.js -->
       </div>
 
-      <!-- Skills Cards Grid -->
-      <div id="skills-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Rendered by js/app.js -->
-      </div>
-
-      <!-- Daily Dev Tools Matrix -->
-      <div class="mt-12 bg-white dark:bg-slate-900/60 p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
-        <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold mb-4">Daily Developer Setup & Toolchain</h4>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 text-center">
-          <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
-            <div class="font-bold text-slate-800 dark:text-white text-xs">Neovim / Cursor</div>
-            <div class="text-[10px] text-slate-500 font-mono">Primary IDE</div>
-          </div>
-          <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
-            <div class="font-bold text-slate-800 dark:text-white text-xs">Ghostty & tmux</div>
-            <div class="text-[10px] text-slate-500 font-mono">Terminal Multiplexer</div>
-          </div>
-          <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
-            <div class="font-bold text-slate-800 dark:text-white text-xs">Docker & OrbStack</div>
-            <div class="text-[10px] text-slate-500 font-mono">Local Containers</div>
-          </div>
-          <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
-            <div class="font-bold text-slate-800 dark:text-white text-xs">Postman & Bruno</div>
-            <div class="text-[10px] text-slate-500 font-mono">API Testing</div>
-          </div>
-          <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
-            <div class="font-bold text-slate-800 dark:text-white text-xs">Figma</div>
-            <div class="text-[10px] text-slate-500 font-mono">Design Specs</div>
-          </div>
-          <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
-            <div class="font-bold text-slate-800 dark:text-white text-xs">Raycast</div>
-            <div class="text-[10px] text-slate-500 font-mono">Productivity</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= EXPERIENCE & EDUCATION SECTION ================= -->
-    <section id="experience" class="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        
-        <!-- Left: Work Experience Timeline -->
-        <div class="lg:col-span-8">
-          <div class="mb-8">
-            <span class="text-xs font-mono uppercase tracking-wider text-brand-600 dark:text-brand-400 font-bold bg-brand-500/10 px-3 py-1 rounded-full border border-brand-500/20">
-              Career Trajectory
-            </span>
-            <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-3">
-              Work Experience & Impact
-            </h2>
-          </div>
-
-          <div id="experience-timeline">
-            <!-- Rendered by js/app.js -->
-          </div>
-        </div>
-
-        <!-- Right: Education & Certifications -->
-        <div class="lg:col-span-4 space-y-8">
-          
-          <!-- Education Card -->
-          <div class="bg-white dark:bg-slate-900/80 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
-            <div class="flex items-center gap-2 mb-4 text-brand-500">
-              <i data-lucide="graduation-cap" class="w-5 h-5"></i>
-              <h3 class="text-base font-bold text-slate-900 dark:text-white">Education</h3>
-            </div>
-            <div>
-              <h4 class="text-sm font-bold text-slate-900 dark:text-white">University of California, Berkeley</h4>
-              <p class="text-xs text-brand-600 dark:text-brand-400 font-medium">B.S. in Computer Science & Applied Mathematics</p>
-              <p class="text-xs text-slate-500 font-mono mt-1">2015 — 2019 • Magna Cum Laude (GPA: 3.88)</p>
-              <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-                Focused on Distributed Systems, Operating Systems, Algorithm Complexity, and Network Protocols.
-              </p>
-            </div>
-          </div>
-
-          <!-- Professional Certifications Card -->
-          <div class="bg-white dark:bg-slate-900/80 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
-            <div class="flex items-center gap-2 mb-4 text-sky-500">
-              <i data-lucide="award" class="w-5 h-5"></i>
-              <h3 class="text-base font-bold text-slate-900 dark:text-white">Certifications</h3>
-            </div>
-            <div class="space-y-3.5">
-              <div class="border-l-2 border-brand-500 pl-3">
-                <div class="text-xs font-bold text-slate-900 dark:text-white">AWS Solutions Architect – Professional</div>
-                <div class="text-[11px] text-slate-500 font-mono">Amazon Web Services • 2024</div>
-              </div>
-              <div class="border-l-2 border-sky-500 pl-3">
-                <div class="text-xs font-bold text-slate-900 dark:text-white">Certified Kubernetes Administrator (CKA)</div>
-                <div class="text-[11px] text-slate-500 font-mono">Linux Foundation / CNCF • 2023</div>
-              </div>
-              <div class="border-l-2 border-purple-500 pl-3">
-                <div class="text-xs font-bold text-slate-900 dark:text-white">HashiCorp Certified: Terraform Associate</div>
-                <div class="text-[11px] text-slate-500 font-mono">HashiCorp • 2023</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Direct CV Download Action Card -->
-          <div class="p-6 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-950 text-white border border-slate-800 shadow-lg">
-            <h4 class="text-sm font-bold mb-2">Need a traditional 1-page resume?</h4>
-            <p class="text-xs text-slate-400 mb-4 leading-relaxed">
-              Open the print-ready resume viewer to download a clean PDF or print directly for your recruiting review.
-            </p>
-            <button onclick="window.openResumeModal()" class="w-full py-2.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold text-xs transition-colors flex items-center justify-center gap-2">
-              <i data-lucide="file-down" class="w-4 h-4"></i>
-              <span>View & Print Resume</span>
-            </button>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ================= TESTIMONIALS SECTION ================= -->
-    <section class="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/80">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-mono uppercase tracking-wider text-brand-600 dark:text-brand-400 font-bold bg-brand-500/10 px-3 py-1 rounded-full border border-brand-500/20">
-          Peer Endorsements
-        </span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-3">
-          What Leaders & Colleagues Say
-        </h2>
-        <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">
-          Feedback from engineering leaders, architects, and product partners I've collaborated with.
-        </p>
-      </div>
-
-      <div id="testimonials-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Rendered by js/app.js -->
-      </div>
-    </section>
-
-    <!-- ================= CONTACT SECTION ================= -->
-    <section id="contact" class="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/80">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        
-        <!-- Left: Contact Information -->
-        <div class="lg:col-span-5 space-y-6">
+      <!-- AUTRES PROJETS MODULAIRES -->
+      <div class="pt-8">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
           <div>
-            <span class="text-xs font-mono uppercase tracking-wider text-brand-600 dark:text-brand-400 font-bold bg-brand-500/10 px-3 py-1 rounded-full border border-brand-500/20">
-              Get In Touch
-            </span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-3">
-              Let's build something remarkable together.
-            </h2>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
-              Have an open staff/lead engineering role, an architectural challenge, or a contract project in mind? Reach out and I'll respond within 24 hours.
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+              Autres Domaines &amp; Modules Prêts à Documenter
+            </h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400">
+              Emplacements modulaires conçus pour recevoir les réalisations complémentaires sans invention fictive.
             </p>
           </div>
 
-          <!-- Direct Channels -->
-          <div class="space-y-3 font-mono text-xs">
-            <!-- Email -->
-            <div class="p-4 rounded-xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 flex items-center justify-between">
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
+          <!-- Filtres de Catégories -->
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <button type="button" class="project-filter-btn px-3 py-1.5 rounded-lg bg-sky-500 text-white font-medium" data-filter="all">Tous</button>
+            <button type="button" class="project-filter-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-200 dark:hover:bg-slate-700" data-filter="ai">IA &amp; Auto</button>
+            <button type="button" class="project-filter-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-200 dark:hover:bg-slate-700" data-filter="web">Web &amp; Mobile</button>
+            <button type="button" class="project-filter-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-200 dark:hover:bg-slate-700" data-filter="management">Gestion / ERP</button>
+            <button type="button" class="project-filter-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-200 dark:hover:bg-slate-700" data-filter="systems">Systèmes</button>
+          </div>
+        </div>
+
+        <div id="other-projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Rendered by app.js -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================= SECTION 5: EXPÉRIENCES PROFESSIONNELLES ================= -->
+    <section id="experience" class="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/80">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-mono uppercase tracking-wider text-sky-600 dark:text-sky-400 font-bold bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/20">
+          Parcours Professionnel
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-3">
+          Expériences Professionnelles
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-3">
+          Interventions en développement Full Stack, gestion de parcs informatiques, administration réseau et sécurité.
+        </p>
+      </div>
+
+      <div id="experience-timeline" class="max-w-4xl mx-auto">
+        <!-- Rendered by app.js -->
+      </div>
+
+    </section>
+
+    <!-- ================= SECTION 6: FORMATION ACADÉMIQUE ================= -->
+    <section id="education" class="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/80">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-mono uppercase tracking-wider text-sky-600 dark:text-sky-400 font-bold bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/20">
+          Cursus Universitaire
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-3">
+          Formation Académique
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-3">
+          Mise en valeur du Master professionnel en Informatique obtenu à l'École Nationale d'Informatique (ENI) de Fianarantsoa.
+        </p>
+      </div>
+
+      <div id="education-timeline" class="max-w-4xl mx-auto">
+        <!-- Rendered by app.js -->
+      </div>
+
+    </section>
+
+    <!-- ================= SECTION 7: CERTIFICATIONS & FORMATIONS ================= -->
+    <section id="certifications" class="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/80">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-mono uppercase tracking-wider text-sky-600 dark:text-sky-400 font-bold bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/20">
+          Évolution Continue
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-3">
+          Certifications &amp; Formations Spécialisées
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-3">
+          Section évolutive dédiée à l'accueil des accréditations officielles en cours et à venir.
+        </p>
+      </div>
+
+      <div id="certifications-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Rendered by app.js -->
+      </div>
+
+    </section>
+
+    <!-- ================= SECTION: TERMINAL INTERACTIF ================= -->
+    <section id="terminal-section" class="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/80">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-mono uppercase tracking-wider text-sky-600 dark:text-sky-400 font-bold bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/20">
+          CLI Pour Développeurs &amp; Recruteurs
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-3">
+          Console Interactive
+        </h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">
+          Explorez le profil, les commandes FIARAmotion, les compétences et le parcours en ligne de commande.
+        </p>
+      </div>
+
+      <div id="terminal-card" class="max-w-4xl mx-auto bg-slate-950 rounded-2xl border border-slate-800 shadow-2xl overflow-hidden font-mono text-xs sm:text-sm flex flex-col h-[460px] cursor-text">
+        <!-- Terminal Header -->
+        <div class="px-4 py-3 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between select-none">
+          <div class="flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-rose-500/80"></div>
+            <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
+            <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+            <span class="ml-2 text-xs text-slate-400">narindra@rackoto-eni:~ (bash)</span>
+          </div>
+          <div class="text-[11px] text-slate-500">RackotoOS v2.6</div>
+        </div>
+
+        <!-- Terminal Output -->
+        <div class="terminal-output flex-1 p-4 overflow-y-auto space-y-1"></div>
+
+        <!-- Terminal Input Line -->
+        <div class="p-3 bg-slate-900/40 border-t border-slate-800/80 flex items-center gap-2">
+          <span class="prompt-prefix text-sky-400 text-xs sm:text-sm font-bold">visiteur@narindra-rackoto:<span class="text-blue-400">~</span>$</span>
+          <input type="text" class="terminal-input flex-1 bg-transparent border-none text-white focus:outline-none text-xs sm:text-sm font-mono placeholder-slate-600" placeholder="Tapez 'fiaramotion', 'help', 'skills'..." autocomplete="off" spellcheck="false">
+          <span class="terminal-cursor"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 8: CONTACT ================= -->
+    <section id="contact" class="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800/80">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-mono uppercase tracking-wider text-sky-600 dark:text-sky-400 font-bold bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/20">
+          Échange &amp; Opportunités
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-3">
+          Entrons en Contact
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+          Vous recherchez un ingénieur Full Stack, un collaborateur en IA ou souhaitez échanger autour de projets numériques ? N'hésitez pas à m'écrire.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-5xl mx-auto">
+        
+        <!-- Left: Coordonnées & Réseaux -->
+        <div class="lg:col-span-5 space-y-6">
+          
+          <div class="p-6 rounded-2xl bg-white dark:bg-[#0c1324] border border-slate-200 dark:border-slate-800 shadow-sm card-electric">
+            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-4">Coordonnées Directes</h3>
+            
+            <div class="space-y-4 text-xs sm:text-sm">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0">
                   <i data-lucide="mail" class="w-4 h-4"></i>
                 </div>
                 <div>
-                  <span class="text-slate-400 text-[10px] block">DIRECT EMAIL</span>
-                  <a href="mailto:alex.morgan.codes@gmail.com" class="font-bold text-slate-800 dark:text-white hover:text-brand-500">alex.morgan.codes@gmail.com</a>
+                  <div class="font-mono text-slate-500 dark:text-slate-400 text-[11px]">Adresse e-mail</div>
+                  <div class="font-semibold text-slate-900 dark:text-white select-all">contact@narindra-rackoto.dev</div>
+                  <button onclick="window.copyEmail()" type="button" class="text-sky-500 hover:text-sky-400 text-xs font-mono flex items-center gap-1 mt-1 transition-colors">
+                    <i data-lucide="copy" class="w-3 h-3"></i>
+                    <span>Copier l'e-mail</span>
+                  </button>
                 </div>
               </div>
-              <button onclick="window.copyEmail()" class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors" title="Copy Email">
-                Copy
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+                  <i data-lucide="map-pin" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <div class="font-mono text-slate-500 dark:text-slate-400 text-[11px]">Localisation</div>
+                  <div class="font-semibold text-slate-900 dark:text-white">Madagascar</div>
+                  <div class="text-[11px] text-slate-500">Fuseau horaire EAT (UTC+3)</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0">
+                  <i data-lucide="share-2" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <div class="font-mono text-slate-500 dark:text-slate-400 text-[11px]">Réseaux Professionnels</div>
+                  <div class="flex items-center gap-3 mt-1.5">
+                    <a href="https://github.com/rackoto786" target="_blank" rel="noopener" class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-sky-400 text-xs font-mono flex items-center gap-1.5 transition-colors">
+                      <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                      <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com/in/narindra-rackoto-98222a3a6/" target="_blank" rel="noopener" class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-sky-400 text-xs font-mono flex items-center gap-1.5 transition-colors">
+                      <i data-lucide="linkedin" class="w-3.5 h-3.5"></i>
+                      <span>LinkedIn</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-gradient-to-br from-sky-500/10 to-blue-600/10 border border-sky-500/20 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            <span class="font-bold text-sky-400 block mb-1">Disponibilité Professionnelle :</span>
+            Ouvert aux opportunités en entreprise, projets d'ingénierie logicielle, intégrations IA et missions d'automatisation.
+          </div>
+
+        </div>
+
+        <!-- Right: Formulaire de Contact Fonctionnel -->
+        <div class="lg:col-span-7">
+          <div class="p-8 rounded-3xl bg-white dark:bg-[#0c1324] border border-slate-200 dark:border-slate-800 shadow-sm card-electric">
+            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">Envoyez-moi un Message</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">Tous les champs sont vérifiés avec validation instantanée.</p>
+
+            <form id="contact-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-mono text-slate-600 dark:text-slate-400 mb-1.5">Votre Nom *</label>
+                  <input type="text" name="name" required placeholder="Ex: Jean Dupont" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700/80 text-xs sm:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all">
+                </div>
+                <div>
+                  <label class="block text-xs font-mono text-slate-600 dark:text-slate-400 mb-1.5">Votre Adresse E-mail *</label>
+                  <input type="email" name="email" required placeholder="jean@entreprise.com" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700/80 text-xs sm:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-mono text-slate-600 dark:text-slate-400 mb-1.5">Sujet du Message</label>
+                <input type="text" name="subject" placeholder="Ex: Opportunité Ingénieur Full Stack / Projet IA" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700/80 text-xs sm:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all">
+              </div>
+
+              <div>
+                <div class="flex justify-between items-center mb-1.5">
+                  <label class="text-xs font-mono text-slate-600 dark:text-slate-400">Votre Message *</label>
+                  <span id="char-count" class="text-[11px] font-mono text-slate-400">0 / 500</span>
+                </div>
+                <textarea id="contact-message" name="message" required rows="5" maxlength="500" placeholder="Bonjour Narindra, nous avons découvert votre projet FIARAmotion et aimerions échanger avec vous au sujet de..." class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700/80 text-xs sm:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all resize-none"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs sm:text-sm shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span>Transmettre le Message</span>
               </button>
-            </div>
-
-            <!-- Location & Time -->
-            <div class="p-4 rounded-xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 flex items-center gap-3">
-              <div class="w-8 h-8 rounded-lg bg-sky-500/10 text-sky-500 flex items-center justify-center">
-                <i data-lucide="map-pin" class="w-4 h-4"></i>
-              </div>
-              <div>
-                <span class="text-slate-400 text-[10px] block">LOCATION & WORKSPACE</span>
-                <span class="font-bold text-slate-800 dark:text-white">San Francisco, CA (Open to Worldwide Remote)</span>
-              </div>
-            </div>
-
-            <!-- Availability Status -->
-            <div class="p-4 rounded-xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 flex items-center gap-3">
-              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
-                <i data-lucide="calendar-check" class="w-4 h-4"></i>
-              </div>
-              <div>
-                <span class="text-slate-400 text-[10px] block">STATUS</span>
-                <span class="font-bold text-emerald-500">Available for Interviews & Engagements</span>
-              </div>
-            </div>
+            </form>
           </div>
         </div>
 
-        <!-- Right: Interactive Contact Form -->
-        <div class="lg:col-span-7 bg-white dark:bg-slate-900/90 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl">
-          <form id="contact-form" class="space-y-4">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs font-mono font-bold text-slate-700 dark:text-slate-300 mb-1.5">Your Name *</label>
-                <input type="text" name="name" required placeholder="Elena Rostova" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
-              </div>
-              <div>
-                <label class="block text-xs font-mono font-bold text-slate-700 dark:text-slate-300 mb-1.5">Your Email *</label>
-                <input type="email" name="email" required placeholder="elena@company.com" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
-              </div>
-            </div>
-
-            <div>
-              <label class="block text-xs font-mono font-bold text-slate-700 dark:text-slate-300 mb-1.5">Subject / Project Scope</label>
-              <input type="text" name="subject" placeholder="Senior Distributed Systems Architect Opportunity" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
-            </div>
-
-            <div>
-              <div class="flex justify-between items-center mb-1.5">
-                <label class="block text-xs font-mono font-bold text-slate-700 dark:text-slate-300">Message *</label>
-                <span id="char-count" class="text-[11px] font-mono text-slate-400">0 / 500</span>
-              </div>
-              <textarea id="contact-message" name="message" required rows="4" maxlength="500" placeholder="Hi Alex, we're building a real-time analytics engine and loved your work on Nexus AI Studio..." class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all resize-none"></textarea>
-            </div>
-
-            <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-bold text-sm shadow-lg shadow-brand-500/25 transition-all flex items-center justify-center gap-2">
-              <i data-lucide="send" class="w-4 h-4"></i>
-              <span>Send Message</span>
-            </button>
-          </form>
-        </div>
-
       </div>
+
     </section>
 
   </main>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="border-t border-slate-200 dark:border-slate-800/80 bg-white/40 dark:bg-[#070b14]/60 py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-slate-500 dark:text-slate-400 font-mono">
-      <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-        <span>Crafted with pride by <span class="text-slate-900 dark:text-white font-semibold profile-name">Alex Morgan</span> • © 2026</span>
-      </div>
+  <!-- ================= SECTION 9: FOOTER ================= -->
+  <footer class="py-12 border-t border-slate-200 dark:border-slate-800/80 bg-white dark:bg-[#060913] text-xs font-mono text-slate-500 dark:text-slate-400 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
       
-      <div class="flex items-center gap-4">
-        <button id="customizer-btn" type="button" class="hover:text-brand-500 transition-colors flex items-center gap-1 text-[11px]">
-          <i data-lucide="sliders" class="w-3.5 h-3.5"></i>
-          <span>Personalize Profile</span>
-        </button>
-        <span class="text-slate-300 dark:text-slate-700">•</span>
-        <a href="#about" class="hover:text-brand-500 transition-colors">Back to Top ↑</a>
+      <!-- Monogram & Title -->
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-sky-500 flex items-center justify-center text-white font-bold text-xs">
+          NR
+        </div>
+        <div>
+          <div class="font-bold text-slate-900 dark:text-white">Narindra Rackoto</div>
+          <div class="text-[11px]">Ingénieur en informatique | Full Stack Developer | AI &amp; Automation</div>
+        </div>
       </div>
+
+      <!-- Footer Quick Nav -->
+      <div class="flex flex-wrap items-center justify-center gap-5 text-xs">
+        <a href="#about" class="hover:text-sky-400 transition-colors">À Propos</a>
+        <a href="#skills" class="hover:text-sky-400 transition-colors">Compétences</a>
+        <a href="#projects" class="hover:text-sky-400 transition-colors">FIARAmotion</a>
+        <a href="#experience" class="hover:text-sky-400 transition-colors">Expériences</a>
+        <a href="#education" class="hover:text-sky-400 transition-colors">Formation (ENI)</a>
+        <a href="#contact" class="hover:text-sky-400 transition-colors">Contact</a>
+      </div>
+
+      <!-- Socials & Copyright -->
+      <div class="flex flex-col items-center md:items-end gap-1.5">
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/rackoto786" target="_blank" rel="noopener" class="hover:text-slate-900 dark:hover:text-white transition-colors" title="GitHub">
+            <i data-lucide="github" class="w-4 h-4"></i>
+          </a>
+          <a href="https://linkedin.com/in/narindra-rackoto-98222a3a6/" target="_blank" rel="noopener" class="hover:text-slate-900 dark:hover:text-white transition-colors" title="LinkedIn">
+            <i data-lucide="linkedin" class="w-4 h-4"></i>
+          </a>
+        </div>
+        <div class="text-[11px]">
+          &copy; 2026 Narindra Rackoto. Tous droits réservés.
+        </div>
+      </div>
+
     </div>
   </footer>
 
-  <!-- ================= MODALS & OVERLAYS ================= -->
+  <!-- ================= MODALES & LIGHTBOXES ================= -->
 
-  <!-- 1. Project Deep Dive Modal -->
-  <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-sm overflow-y-auto">
-    <div class="relative w-full max-w-3xl bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden my-8" id="project-modal-content">
-      <!-- Populated dynamically by openProjectModal(id) in js/app.js -->
+  <!-- Modal 1: Étude de Cas Complète FIARAmotion -->
+  <div id="flagship-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto">
+    <div class="relative w-full max-w-4xl bg-white dark:bg-[#0c1324] rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden my-8" id="flagship-modal-body">
+      <!-- Injected by app.js -->
     </div>
   </div>
 
-  <!-- 2. Formal Resume Modal -->
-  <div id="resume-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm overflow-y-auto">
-    <div class="relative w-full max-w-4xl bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden my-8 p-6 sm:p-10 font-sans text-slate-800 dark:text-slate-200">
-      
-      <!-- Modal Header / Controls (hidden on print) -->
-      <div class="flex items-center justify-between pb-6 mb-6 border-b border-slate-200 dark:border-slate-800 no-print">
-        <div class="flex items-center gap-2">
-          <i data-lucide="file-check" class="w-5 h-5 text-brand-500"></i>
-          <span class="font-mono text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Formal Curriculum Vitae</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <button onclick="window.print()" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-semibold flex items-center gap-1.5 transition-colors">
-            <i data-lucide="printer" class="w-4 h-4"></i>
-            <span>Print / Save as PDF</span>
-          </button>
-          <button onclick="window.closeResumeModal()" class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center justify-center transition-colors">
-            <i data-lucide="x" class="w-4 h-4"></i>
-          </button>
-        </div>
+  <!-- Modal 2: Lightbox Visionneuse Plein Écran -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/90 backdrop-blur-lg">
+    <div class="relative max-w-5xl w-full flex flex-col items-center">
+      <button id="lightbox-close-btn" class="absolute -top-12 right-0 p-2 text-white/80 hover:text-white transition-colors">
+        <i data-lucide="x" class="w-7 h-7"></i>
+      </button>
+      <img id="lightbox-img" src="" alt="Capture plein écran" class="max-h-[80vh] w-auto rounded-xl border border-slate-700 shadow-2xl object-contain">
+      <div class="mt-4 text-center">
+        <h4 id="lightbox-title" class="text-base font-bold text-white"></h4>
+        <p id="lightbox-desc" class="text-xs text-slate-400 mt-1 max-w-xl mx-auto"></p>
       </div>
-
-      <!-- Printable Resume Body -->
-      <div class="space-y-6">
-        <!-- Resume Header -->
-        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 pb-4 border-b border-slate-200 dark:border-slate-800">
-          <div>
-            <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white profile-name">Alex Morgan</h1>
-            <p class="text-sm font-semibold text-brand-600 dark:text-brand-400 mt-0.5 profile-tagline">Staff Full-Stack Engineer & Distributed Systems Architect</p>
-          </div>
-          <div class="text-xs font-mono text-slate-500 dark:text-slate-400 space-y-0.5 sm:text-right">
-            <p>alex.morgan.codes@gmail.com</p>
-            <p>San Francisco, CA • Open to Remote</p>
-            <p>github.com • linkedin.com</p>
-          </div>
-        </div>
-
-        <!-- Summary -->
-        <div>
-          <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400 mb-1">Executive Summary</h3>
-          <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-            Staff Software Engineer with over 6 years of experience architecting resilient distributed systems, real-time collaboration engines, and developer toolchains. Proven track record leading cross-functional teams, reducing multi-million dollar cloud infrastructure bills, and achieving sub-100ms response latencies for applications serving 250k+ active users.
-          </p>
-        </div>
-
-        <!-- Experience -->
-        <div>
-          <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400 mb-3">Professional Experience</h3>
-          <div class="space-y-4">
-            <div>
-              <div class="flex justify-between items-baseline">
-                <span class="text-sm font-bold text-slate-900 dark:text-white">Staff Software Engineer & Platform Lead — CloudScale Labs</span>
-                <span class="text-xs font-mono text-slate-500">2023 — Present</span>
-              </div>
-              <ul class="list-disc list-inside text-xs text-slate-600 dark:text-slate-300 mt-1 space-y-1">
-                <li>Designed high-throughput real-time collaboration engine using Go, WebSockets, and Redis Streams serving 150k+ daily users.</li>
-                <li>Refactored legacy ingestion pipeline into event-driven architecture, reducing p99 latency from 340ms to 42ms.</li>
-                <li>Led cloud cost optimization initiatives saving over $280,000 annually across AWS ECS and RDS instances.</li>
-              </ul>
-            </div>
-
-            <div>
-              <div class="flex justify-between items-baseline">
-                <span class="text-sm font-bold text-slate-900 dark:text-white">Senior Full-Stack Engineer — Hyperion Systems</span>
-                <span class="text-xs font-mono text-slate-500">2021 — 2023</span>
-              </div>
-              <ul class="list-disc list-inside text-xs text-slate-600 dark:text-slate-300 mt-1 space-y-1">
-                <li>Engineered customer-facing data visualization platform handling 500k-row streaming telemetry tables with zero UI lag.</li>
-                <li>Authored and deployed internal headless design system component library adopted across 6 distinct engineering teams.</li>
-                <li>Implemented SAML 2.0 / OAuth2 single sign-on enterprise integrations for Okta, Azure AD, and Google.</li>
-              </ul>
-            </div>
-
-            <div>
-              <div class="flex justify-between items-baseline">
-                <span class="text-sm font-bold text-slate-900 dark:text-white">Software Engineer — Vanguard Digital Studio</span>
-                <span class="text-xs font-mono text-slate-500">2019 — 2021</span>
-              </div>
-              <ul class="list-disc list-inside text-xs text-slate-600 dark:text-slate-300 mt-1 space-y-1">
-                <li>Built resilient REST & GraphQL APIs in Node.js/PostgreSQL serving up to 8,000 req/sec peak loads.</li>
-                <li>Achieved 100/100 Lighthouse performance and accessibility benchmarks across flagship customer portals.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Skills & Education Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
-          <div>
-            <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400 mb-2">Technical Proficiencies</h3>
-            <div class="text-xs text-slate-600 dark:text-slate-300 space-y-1">
-              <p><strong class="text-slate-900 dark:text-white">Languages:</strong> TypeScript, JavaScript, Go, Rust, Python, SQL</p>
-              <p><strong class="text-slate-900 dark:text-white">Frontend:</strong> React, Next.js 15, Vue, Tailwind CSS, WebGL, WCAG AAA</p>
-              <p><strong class="text-slate-900 dark:text-white">Backend:</strong> Node.js, Bun, PostgreSQL, Redis, Kafka, gRPC, GraphQL</p>
-              <p><strong class="text-slate-900 dark:text-white">Cloud/DevOps:</strong> AWS, Docker, Kubernetes, Terraform, CI/CD</p>
-            </div>
-          </div>
-
-          <div>
-            <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400 mb-2">Education & Certifications</h3>
-            <div class="text-xs text-slate-600 dark:text-slate-300 space-y-1">
-              <p class="font-bold text-slate-900 dark:text-white">B.S. in Computer Science & Applied Math</p>
-              <p class="text-slate-500">UC Berkeley • 2015 — 2019 • Magna Cum Laude (3.88)</p>
-              <p class="mt-2 text-slate-500 font-mono text-[11px]">• AWS Certified Solutions Architect – Professional</p>
-              <p class="text-slate-500 font-mono text-[11px]">• Certified Kubernetes Administrator (CKA)</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
     </div>
   </div>
 
-  <!-- 3. Spotlight Command Palette (Cmd+K) -->
+  <!-- Modal 3: Visionneuse de CV Interactif & Impression -->
+  <div id="resume-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto">
+    <div class="relative w-full max-w-3xl bg-white dark:bg-[#0c1324] rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden my-8 p-6 sm:p-10" id="resume-modal-body">
+      <!-- Injected by app.js -->
+    </div>
+  </div>
+
+  <!-- Modal 4: Palette de Commande (⌘K / Ctrl+K) -->
   <div id="command-palette" class="fixed inset-0 z-50 hidden items-start justify-center p-4 sm:p-20 bg-black/75 backdrop-blur-sm">
-    <div class="relative w-full max-w-xl bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
-      <!-- Input Search Bar -->
-      <div class="p-4 border-b border-slate-200 dark:border-slate-800 flex items-center gap-3">
-        <i data-lucide="search" class="w-5 h-5 text-slate-400"></i>
-        <input id="palette-input" type="text" class="w-full bg-transparent text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none" placeholder="Type a command or jump to section (e.g. projects, resume, hire)..." autocomplete="off">
-        <kbd class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-[10px] text-slate-400 font-mono">ESC</kbd>
+    <div class="relative w-full max-w-lg bg-white dark:bg-[#0c1324] rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+      <div class="p-3 border-b border-slate-200 dark:border-slate-800 flex items-center gap-2.5">
+        <i data-lucide="search" class="w-4 h-4 text-slate-400"></i>
+        <input id="palette-input" type="text" class="w-full bg-transparent text-xs sm:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none" placeholder="Rechercher une section, compétence ou projet (ex: FIARAmotion, CV, React)..." autocomplete="off">
+        <kbd class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-[10px] text-slate-500 font-mono">ESC</kbd>
       </div>
-      <!-- Results List -->
       <div id="palette-results" class="p-2 max-h-80 overflow-y-auto space-y-1">
-        <!-- Rendered by js/app.js -->
+        <!-- Results -->
       </div>
     </div>
   </div>
 
-  <!-- 4. Profile Customizer Modal -->
-  <div id="customizer-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
-    <div class="relative w-full max-w-md bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-4">
-      <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
-        <div class="flex items-center gap-2">
-          <i data-lucide="sliders" class="w-5 h-5 text-brand-500"></i>
-          <h3 class="text-base font-bold text-slate-900 dark:text-white">Personalize Profile</h3>
-        </div>
-        <button onclick="window.closeCustomizer()" class="text-slate-400 hover:text-white">
-          <i data-lucide="x" class="w-4 h-4"></i>
-        </button>
-      </div>
-
-      <p class="text-xs text-slate-500 dark:text-slate-400">
-        Want to test how this portfolio looks with your own details? Modify any field below to update the live preview immediately:
-      </p>
-
-      <form id="customizer-form" class="space-y-3 text-xs font-mono">
-        <div>
-          <label class="block text-slate-400 mb-1">Your Full Name</label>
-          <input id="cust-name" type="text" class="w-full px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none">
-        </div>
-        <div>
-          <label class="block text-slate-400 mb-1">Professional Tagline</label>
-          <input id="cust-title" type="text" class="w-full px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none">
-        </div>
-        <div>
-          <label class="block text-slate-400 mb-1">Contact Email</label>
-          <input id="cust-email" type="email" class="w-full px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none">
-        </div>
-        <div>
-          <label class="block text-slate-400 mb-1">Location & Remote Preference</label>
-          <input id="cust-location" type="text" class="w-full px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none">
-        </div>
-        <div>
-          <label class="block text-slate-400 mb-1">Availability Pill Text</label>
-          <input id="cust-status" type="text" class="w-full px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none">
-        </div>
-
-        <div class="pt-3 flex gap-2">
-          <button type="submit" class="w-full py-2.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-bold font-sans transition-colors">
-            Apply Changes
-          </button>
-          <button type="button" onclick="window.closeCustomizer()" class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold font-sans transition-colors">
-            Cancel
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- Scripts -->
+  <!-- Application Logic Scripts -->
   <script src="js/data.js"></script>
   <script src="js/terminal.js"></script>
   <script src="js/app.js"></script>
