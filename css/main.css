@@ -1,36 +1,52 @@
-/* Custom styles and enhancements */
+/* Narindra Rackoto — Portfolio Haute Précision & Élégance */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300..700;1,300..700&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 :root {
-  --brand-primary: #10b981;
-  --brand-secondary: #0ea5e9;
-  --brand-accent: #6366f1;
+  --bg-deep: #060913;
+  --bg-navy: #0b1120;
+  --bg-card: #0f172a;
+  --border-glow: rgba(59, 130, 246, 0.25);
+  --electric-blue: #3b82f6;
+  --cyan-glow: #38bdf8;
+  --accent-blue: #2563eb;
 }
 
 html {
   scroll-behavior: smooth;
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Background Grid Pattern */
+/* Background Cyber Grid Pattern */
 .bg-grid-pattern {
   background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(148, 163, 184, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+    linear-gradient(to right, rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
 }
 
 .dark .bg-grid-pattern {
   background-size: 36px 36px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    linear-gradient(to right, rgba(56, 189, 248, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.035) 1px, transparent 1px);
+}
+
+/* Dynamic Interactive Particle Canvas */
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.7;
 }
 
 /* Custom Scrollbars */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-track {
@@ -38,25 +54,25 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.3);
+  background: rgba(148, 163, 184, 0.25);
   border-radius: 9999px;
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(59, 130, 246, 0.25);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(16, 185, 129, 0.5);
+  background: rgba(56, 189, 248, 0.6);
 }
 
 /* Glowing Ambient Orbs */
 .glow-orb {
   position: absolute;
   border-radius: 9999px;
-  filter: blur(80px);
+  filter: blur(100px);
   pointer-events: none;
-  opacity: 0.25;
+  opacity: 0.2;
   transition: all 0.5s ease-in-out;
 }
 
@@ -65,20 +81,35 @@ html {
 }
 
 /* Pulsing Status Dot */
-@keyframes pulseGlow {
+@keyframes pulseBlue {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7);
   }
   50% {
-    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+    box-shadow: 0 0 0 8px rgba(56, 189, 248, 0);
   }
 }
 
 .status-pulse {
-  animation: pulseGlow 2.2s infinite;
+  animation: pulseBlue 2.2s infinite;
 }
 
-/* Terminal Blinking Cursor */
+/* Electric Glow Card Effect */
+.card-electric {
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-electric:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px -10px rgba(37, 99, 235, 0.25);
+}
+
+.card-electric-glow {
+  box-shadow: 0 0 25px -5px rgba(59, 130, 246, 0.2);
+}
+
+/* Terminal Cursor */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
@@ -89,7 +120,7 @@ html {
   width: 8px;
   height: 15px;
   vertical-align: middle;
-  background-color: #34d399;
+  background-color: #38bdf8;
   animation: blink 1s step-end infinite;
 }
 
@@ -102,14 +133,21 @@ html {
 .animate-marquee {
   display: flex;
   width: 200%;
-  animation: marquee 26s linear infinite;
+  animation: marquee 30s linear infinite;
 }
 
 .animate-marquee:hover {
   animation-play-state: paused;
 }
 
-/* Print Stylesheet for Resume Modal */
+/* Master Badge Glow */
+.master-pill-glow {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(56, 189, 248, 0.1));
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
+}
+
+/* Print Stylesheet for CV / Resume */
 @media print {
   body * {
     visibility: hidden;
@@ -124,7 +162,7 @@ html {
     top: 0;
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 10mm;
     background: white !important;
     color: black !important;
   }

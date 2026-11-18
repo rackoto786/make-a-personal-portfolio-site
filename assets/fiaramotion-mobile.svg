@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 720" width="100%" height="100%">
+  <defs>
+    <linearGradient id="phoneBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090e1a" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="blueAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Device Frame -->
+  <rect x="25" y="10" width="400" height="700" rx="40" fill="#020617" stroke="#1e293b" stroke-width="4" />
+  
+  <!-- Notch / Dynamic Island -->
+  <rect x="155" y="24" width="140" height="22" rx="11" fill="#020617" stroke="#334155" stroke-width="1" />
+  <circle cx="270" cy="35" r="4" fill="#1e293b" />
+
+  <!-- Screen Area -->
+  <rect x="40" y="55" width="370" height="630" rx="28" fill="url(#phoneBg)" />
+
+  <!-- Screen Content -->
+  <!-- Header Bar -->
+  <g transform="translate(60, 80)">
+    <rect x="0" y="0" width="330" height="42" rx="10" fill="#1e293b" />
+    <circle cx="22" cy="21" r="5" fill="#38bdf8" />
+    <text x="36" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="13" fill="#ffffff">FIARAmotion <tspan fill="#38bdf8">PWA</tspan></text>
+    <rect x="235" y="8" width="80" height="26" rx="6" fill="#0f172a" />
+    <text x="247" y="25" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="600" fill="#10b981">● Conducteur</text>
+  </g>
+
+  <!-- Active Mission Card -->
+  <g transform="translate(60, 140)">
+    <rect x="0" y="0" width="330" height="150" rx="14" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
+    <rect x="16" y="14" width="90" height="22" rx="5" fill="#0284c7" />
+    <text x="25" y="29" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="10" fill="#ffffff">MISSION EN COURS</text>
+
+    <text x="16" y="60" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="16" fill="#ffffff">Toyota Hilux 4x4 (Flotte #04)</text>
+    <text x="16" y="78" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#94a3b8">Trajet : CERES Antananarivo → Antsirabe</text>
+
+    <!-- Progress bar -->
+    <rect x="16" y="94" width="298" height="8" rx="4" fill="#0f172a" />
+    <rect x="16" y="94" width="210" height="8" rx="4" fill="url(#blueAccent)" />
+
+    <text x="16" y="125" font-family="'JetBrains Mono', monospace" font-size="10" fill="#38bdf8">Départ: 08:30 • Arrivée estimée: 12:45</text>
+    <text x="240" y="125" font-family="'JetBrains Mono', monospace" font-size="10" fill="#10b981" font-weight="700">70% effectué</text>
+  </g>
+
+  <!-- Quick Action Buttons -->
+  <g transform="translate(60, 310)">
+    <!-- Action 1: Saisie Carburant -->
+    <rect x="0" y="0" width="155" height="70" rx="12" fill="#15213b" stroke="#334155" stroke-width="1" />
+    <circle cx="28" cy="35" r="14" fill="#2563eb" />
+    <text x="22" y="39" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#ffffff">⛽</text>
+    <text x="50" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11" fill="#ffffff">Carburant</text>
+    <text x="50" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#94a3b8">Saisir ticket / litres</text>
+
+    <!-- Action 2: Signaler Incident -->
+    <rect x="175" y="0" width="155" height="70" rx="12" fill="#15213b" stroke="#334155" stroke-width="1" />
+    <circle cx="203" cy="35" r="14" fill="#e11d48" />
+    <text x="197" y="39" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#ffffff">⚠️</text>
+    <text x="225" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11" fill="#ffffff">Maintenance</text>
+    <text x="225" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#94a3b8">Alerte anomalie</text>
+  </g>
+
+  <!-- Checklist & Validation Section -->
+  <g transform="translate(60, 400)">
+    <rect x="0" y="0" width="330" height="180" rx="14" fill="#15213b" stroke="#334155" stroke-width="1" />
+    <text x="16" y="28" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="12" fill="#ffffff">Contrôles Véhicule de Départ</text>
+
+    <g transform="translate(16, 42)" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">
+      <rect y="0" width="298" height="34" rx="8" fill="#0b1120" />
+      <text x="12" y="22" fill="#10b981">✓ Niveau huile &amp; liquide de frein</text>
+      <text x="260" y="22" fill="#64748b" font-size="10">OK</text>
+
+      <rect y="40" width="298" height="34" rx="8" fill="#0b1120" />
+      <text x="12" y="62" fill="#10b981">✓ Pression des pneumatiques</text>
+      <text x="260" y="62" fill="#64748b" font-size="10">OK</text>
+
+      <rect y="80" width="298" height="34" rx="8" fill="#0b1120" />
+      <text x="12" y="102" fill="#38bdf8">● Kilométrage compteur</text>
+      <text x="240" y="102" fill="#38bdf8" font-weight="700">124 580 km</text>
+    </g>
+
+    <!-- Complete Mission CTA -->
+    <rect x="16" y="132" width="298" height="36" rx="8" fill="url(#blueAccent)" />
+    <text x="165" y="155" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="12" fill="#ffffff" text-anchor="middle">Valider Fin de Mission &amp; Rapport</text>
+  </g>
+
+  <!-- Bottom Navigation PWA -->
+  <g transform="translate(60, 600)">
+    <rect x="0" y="0" width="330" height="50" rx="12" fill="#0b1120" stroke="#1e293b" stroke-width="1" />
+    <g font-family="'Plus Jakarta Sans', sans-serif" font-size="9" text-anchor="middle" fill="#94a3b8">
+      <text x="40" y="30" fill="#38bdf8" font-weight="700">Accueil</text>
+      <text x="120" y="30">Missions</text>
+      <text x="210" y="30">Véhicules</text>
+      <text x="290" y="30">Profil</text>
+    </g>
+  </g>
+</svg>
