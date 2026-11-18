@@ -62,6 +62,7 @@ Ce portfolio est conçu et développé selon les standards des ingénieurs logic
 │   ├── app.js                   # Moteur applicatif, canvas, modales, recherche et thèmes
 │   └── terminal.js              # Simulateur de console Linux pour développeurs
 └── assets/
+    ├── CV_Narindra_Rackoto.pdf  # Curriculum Vitae officiel au format PDF (2 pages)
     ├── avatar.svg               # Avatar vectoriel haute définition (remplaçable par photo)
     ├── fiaramotion-dashboard.svg# Maquette UI Tableau de bord FIARAmotion
     ├── fiaramotion-architecture.svg # Schéma d'architecture Full Stack CERES
