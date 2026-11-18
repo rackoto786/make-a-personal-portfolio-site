@@ -876,17 +876,39 @@ function initContactForm() {
 
       showToast(`Merci ${name} ! Votre message a été préparé avec succès.`, 'success');
 
-      // Déclencheur client mailto fallback optionnel
-      const mailtoUrl = `mailto:${window.PORTFOLIO_DATA.profile.email}?subject=${encodeURIComponent(subject || 'Contact Portfolio')}&body=${encodeURIComponent(`De : ${name} (${email})\n\n${message}`)}`;
+      // Mailto URL direct
+      const mailtoUrl = `mailto:${window.PORTFOLIO_DATA.profile.email}?subject=${encodeURIComponent(subject || 'Contact Portfolio Narindra Rackoto')}&body=${encodeURIComponent(`De : ${name} (${email})\n\n${message}`)}`;
       
-      const promptFallback = confirm(`Message enregistré ! Souhaitez-vous l'ouvrir directement dans votre client de messagerie (${window.PORTFOLIO_DATA.profile.email}) ?`);
-      if (promptFallback) {
-        window.location.href = mailtoUrl;
+      // Affichage d'un panneau de confirmation moderne dans le formulaire
+      let feedbackBox = document.getElementById('contact-feedback-box');
+      if (!feedbackBox) {
+        feedbackBox = document.createElement('div');
+        feedbackBox.id = 'contact-feedback-box';
+        form.parentNode.insertBefore(feedbackBox, form);
       }
+      feedbackBox.className = 'p-5 mb-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-xs sm:text-sm text-emerald-300 space-y-3';
+      feedbackBox.innerHTML = `
+        <div class="flex items-center gap-2 font-bold text-white text-sm">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+          <span>Message préparé avec succès pour Narindra Rackoto</span>
+        </div>
+        <p class="text-slate-300 text-xs leading-relaxed">
+          Merci <strong class="text-white">${escapeHtml(name)}</strong>. Les champs sont validés. Vous pouvez expédier votre message via votre messagerie ou copier le texte :
+        </p>
+        <div class="flex flex-wrap gap-2 pt-1">
+          <a href="${mailtoUrl}" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs inline-flex items-center gap-2 transition-colors shadow-sm">
+            <span>Ouvrir dans mon client e-mail</span>
+            <span>↗</span>
+          </a>
+          <button type="button" onclick="navigator.clipboard.writeText('${escapeHtml(message).replace(/'/g, "\\'")}'); showToast('Contenu du message copié !', 'success');" class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono transition-colors border border-slate-700">
+            Copier le message
+          </button>
+        </div>
+      `;
 
       form.reset();
       if (charCounter) charCounter.textContent = '0 / 500';
-    }, 900);
+    }, 500);
   });
 }
 
@@ -901,6 +923,9 @@ function initFlagshipCaseStudyModal() {
     modal.classList.remove('hidden');
     modal.classList.add('flex');
     document.body.style.overflow = 'hidden';
+    if (window.location.hash !== '#fiaramotion') {
+      history.replaceState(null, '', '#fiaramotion');
+    }
     if (window.lucide) window.lucide.createIcons();
   };
 
@@ -909,6 +934,9 @@ function initFlagshipCaseStudyModal() {
     modal.classList.add('hidden');
     modal.classList.remove('flex');
     document.body.style.overflow = '';
+    if (window.location.hash === '#fiaramotion' || window.location.hash === '#case-study') {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
   };
 
   modal.addEventListener('click', (e) => {
