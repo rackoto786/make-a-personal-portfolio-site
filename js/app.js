@@ -1196,6 +1196,9 @@ function initResumeModal() {
     modal.classList.remove('hidden');
     modal.classList.add('flex');
     document.body.style.overflow = 'hidden';
+    if (window.location.hash !== '#cv') {
+      history.replaceState(null, '', '#cv');
+    }
     if (window.lucide) window.lucide.createIcons();
   };
 
@@ -1204,6 +1207,9 @@ function initResumeModal() {
     modal.classList.add('hidden');
     modal.classList.remove('flex');
     document.body.style.overflow = '';
+    if (window.location.hash === '#cv' || window.location.hash === '#resume') {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
   };
 
   modal.addEventListener('click', (e) => {
@@ -1217,19 +1223,27 @@ function renderResumeModalContent() {
   if (!container || !data) return;
 
   const p = data.profile;
+  const pdfUrl = p.resumePdfUrl || 'assets/CV_Narindra_Rackoto.pdf';
 
   container.innerHTML = `
     <!-- Top Action Toolbar -->
-    <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-200 dark:border-slate-800 no-print">
-      <span class="text-xs font-mono font-bold text-sky-500 uppercase tracking-wider">
-        CURRICULUM VITAE PROFESSIONNEL
-      </span>
-      <div class="flex items-center gap-2">
+    <div class="flex flex-wrap items-center justify-between gap-3 pb-4 mb-6 border-b border-slate-200 dark:border-slate-800 no-print">
+      <div>
+        <span class="text-xs font-mono font-bold text-sky-500 uppercase tracking-wider block">
+          CURRICULUM VITAE PROFESSIONNEL
+        </span>
+        <span class="text-[11px] text-slate-500 dark:text-slate-400">Master professionnel en Informatique • ENI 2026</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-2">
+        <a href="${pdfUrl}" download="CV_Narindra_Rackoto.pdf" class="px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center gap-1.5 transition-colors shadow-sm">
+          <i data-lucide="download" class="w-3.5 h-3.5"></i>
+          <span>Télécharger le PDF (Officiel)</span>
+        </a>
         <button onclick="window.print()" class="px-3.5 py-1.5 rounded-lg bg-sky-500 hover:bg-sky-600 text-white text-xs font-bold flex items-center gap-1.5 transition-colors shadow-sm">
           <i data-lucide="printer" class="w-3.5 h-3.5"></i>
-          <span>Imprimer / Sauvegarder en PDF</span>
+          <span>Imprimer / Format A4</span>
         </button>
-        <button onclick="window.closeResumeModal()" class="p-1.5 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-colors">
+        <button onclick="window.closeResumeModal()" class="p-1.5 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-colors" title="Fermer">
           <i data-lucide="x" class="w-4 h-4"></i>
         </button>
       </div>
@@ -1359,6 +1373,45 @@ function initCommandPalette() {
     if (e.target === palette) closePalette();
   });
 
+  let selectedIdx = 0;
+  let currentFiltered = [];
+
+  function updateHighlight() {
+    const items = resultsContainer.querySelectorAll('.palette-item');
+    items.forEach((item, idx) => {
+      if (idx === selectedIdx) {
+        item.classList.add('bg-sky-500/15', 'border', 'border-sky-500/30');
+        item.classList.remove('hover:bg-slate-100', 'dark:hover:bg-slate-800/80');
+        item.scrollIntoView({ block: 'nearest' });
+      } else {
+        item.classList.remove('bg-sky-500/15', 'border', 'border-sky-500/30');
+        item.classList.add('hover:bg-slate-100', 'dark:hover:bg-slate-800/80');
+      }
+    });
+  }
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (currentFiltered.length > 0) {
+        selectedIdx = (selectedIdx + 1) % currentFiltered.length;
+        updateHighlight();
+      }
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (currentFiltered.length > 0) {
+        selectedIdx = (selectedIdx - 1 + currentFiltered.length) % currentFiltered.length;
+        updateHighlight();
+      }
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (currentFiltered[selectedIdx]) {
+        closePalette();
+        currentFiltered[selectedIdx].action();
+      }
+    }
+  });
+
   function renderPaletteResults(query) {
     const q = query.toLowerCase().trim();
     const items = [
@@ -1367,19 +1420,31 @@ function initCommandPalette() {
       { label: 'Compétences Techniques & Recherche', icon: 'cpu', action: () => scrollToId('skills'), sub: 'Frontend, Backend, IA, Systèmes' },
       { label: 'Expériences Professionnelles (CERES, FID, CHU)', icon: 'briefcase', action: () => scrollToId('experience'), sub: 'Timeline professionnelle' },
       { label: 'Formation Académique (Master ENI 2026)', icon: 'graduation-cap', action: () => scrollToId('education'), sub: 'Diplôme d\'ingénieur en informatique' },
-      { label: 'Ouvrir le Curriculum Vitae (CV)', icon: 'file-text', action: () => window.openResumeModal(), sub: 'Aperçu et impression PDF' },
+      { label: 'Ouvrir le Curriculum Vitae (CV)', icon: 'file-text', action: () => window.openResumeModal(), sub: 'Aperçu, téléchargement PDF & impression' },
+      { label: 'Télécharger le CV au format PDF', icon: 'download', action: () => { const a = document.createElement('a'); a.href = 'assets/CV_Narindra_Rackoto.pdf'; a.download = 'CV_Narindra_Rackoto.pdf'; a.click(); }, sub: 'Document PDF officiel (2 pages)' },
       { label: 'Me Contacter Directement', icon: 'send', action: () => scrollToId('contact'), sub: 'Formulaire et coordonnées' },
       { label: 'Copier mon adresse e-mail', icon: 'copy', action: () => window.copyEmail(), sub: window.PORTFOLIO_DATA.profile.email },
       { label: 'Profil GitHub (rackoto786)', icon: 'github', action: () => window.open(window.PORTFOLIO_DATA.profile.github, '_blank'), sub: 'Code source & contributions' },
       { label: 'Profil LinkedIn (Narindra Rackoto)', icon: 'linkedin', action: () => window.open(window.PORTFOLIO_DATA.profile.linkedin, '_blank'), sub: 'Réseau professionnel' }
     ];
 
-    const filtered = q 
+    currentFiltered = q 
       ? items.filter(it => it.label.toLowerCase().includes(q) || it.sub.toLowerCase().includes(q))
       : items;
 
-    resultsContainer.innerHTML = filtered.map((item, idx) => `
-      <div class="palette-item p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800/80 cursor-pointer flex items-center justify-between text-xs transition-colors" data-idx="${idx}">
+    selectedIdx = 0;
+
+    if (currentFiltered.length === 0) {
+      resultsContainer.innerHTML = `
+        <div class="p-6 text-center text-xs text-slate-500 dark:text-slate-400 font-mono">
+          Aucun résultat pour "${escapeHtml(query)}"
+        </div>
+      `;
+      return;
+    }
+
+    resultsContainer.innerHTML = currentFiltered.map((item, idx) => `
+      <div class="palette-item p-3 rounded-xl ${idx === 0 ? 'bg-sky-500/15 border border-sky-500/30' : 'hover:bg-slate-100 dark:hover:bg-slate-800/80'} cursor-pointer flex items-center justify-between text-xs transition-colors" data-idx="${idx}">
         <div class="flex items-center gap-3">
           <div class="w-7 h-7 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center">
             <i data-lucide="${item.icon}" class="w-4 h-4"></i>
@@ -1398,10 +1463,14 @@ function initCommandPalette() {
     resultsContainer.querySelectorAll('.palette-item').forEach(el => {
       el.addEventListener('click', () => {
         const idx = parseInt(el.getAttribute('data-idx'));
-        if (filtered[idx]) {
+        if (currentFiltered[idx]) {
           closePalette();
-          filtered[idx].action();
+          currentFiltered[idx].action();
         }
+      });
+      el.addEventListener('mouseenter', () => {
+        selectedIdx = parseInt(el.getAttribute('data-idx'));
+        updateHighlight();
       });
     });
   }
