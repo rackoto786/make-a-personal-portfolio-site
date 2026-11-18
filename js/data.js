@@ -28,6 +28,7 @@ const PORTFOLIO_DATA = {
     github: "https://github.com/rackoto786",
     linkedin: "https://linkedin.com/in/narindra-rackoto-98222a3a6/",
     resumeUrl: "#resume-modal",
+    resumePdfUrl: "assets/CV_Narindra_Rackoto.pdf",
 
     shortBio: "Diplômé d'un Master professionnel en Informatique (ENI Fianarantsoa, nov. 2026). Passionné par l'intelligence artificielle, l'automatisation et le développement Full Stack.",
 

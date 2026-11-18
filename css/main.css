@@ -149,24 +149,57 @@ html {
 
 /* Print Stylesheet for CV / Resume */
 @media print {
-  body * {
-    visibility: hidden;
+  @page {
+    margin: 12mm 15mm;
+    size: A4;
   }
-  #resume-modal,
-  #resume-modal * {
-    visibility: visible;
+  html, body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  body > *:not(#resume-modal) {
+    display: none !important;
   }
   #resume-modal {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    margin: 0;
-    padding: 10mm;
-    background: white !important;
-    color: black !important;
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+  }
+  #resume-modal-body {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: #0f172a !important;
   }
   .no-print {
     display: none !important;
+  }
+  /* Ensure readable contrast when printed */
+  #resume-modal-body * {
+    color: #0f172a !important;
+  }
+  #resume-modal-body .text-sky-500,
+  #resume-modal-body .text-sky-400 {
+    color: #0284c7 !important;
+  }
+  #resume-modal-body .text-emerald-500,
+  #resume-modal-body .text-emerald-400 {
+    color: #059669 !important;
+  }
+  #resume-modal-body .text-slate-500,
+  #resume-modal-body .text-slate-400 {
+    color: #475569 !important;
+  }
+  #resume-modal-body .border-slate-800,
+  #resume-modal-body .border-slate-700,
+  #resume-modal-body .border-slate-200 {
+    border-color: #cbd5e1 !important;
   }
 }
