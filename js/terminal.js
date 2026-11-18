@@ -39,7 +39,7 @@ class PortfolioTerminal {
         <p class="text-slate-400">Bienvenue sur le terminal de <span class="text-white font-semibold">Narindra Rackoto</span>. Tapez <span class="text-sky-300 font-semibold underline cursor-pointer" onclick="window.runTerminalCmd('help')">help</span> ou sélectionnez une commande :</p>
       </div>
       <div class="flex flex-wrap gap-1.5 mb-3">
-        ${['help', 'fiaramotion', 'about', 'skills', 'experience', 'education', 'contact', 'clear'].map(cmd => 
+        ${['help', 'fiaramotion', 'about', 'skills', 'projects', 'experience', 'education', 'certifications', 'contact', 'cv', 'theme', 'whoami', 'clear'].map(cmd => 
           `<button type="button" class="px-2 py-0.5 rounded text-xs bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-sky-300 font-mono border border-slate-700/60 transition-colors" onclick="window.runTerminalCmd('${cmd}')">$ ${cmd}</button>`
         ).join('')}
       </div>
@@ -93,14 +93,21 @@ class PortfolioTerminal {
       case 'help':
         this.appendOutput(`
           <div class="font-mono text-xs text-slate-300 space-y-1 my-2 border-l-2 border-sky-500 pl-3">
-            <p><span class="text-sky-300 font-bold">fiaramotion</span> - Étude de cas détaillée du projet phare (CERES)</p>
-            <p><span class="text-sky-300 font-bold">about</span>       - Présentation de Narindra Rackoto & Master ENI</p>
-            <p><span class="text-sky-300 font-bold">skills</span>      - Synthèse des compétences (Frontend, Backend, IA, DB, Systèmes)</p>
-            <p><span class="text-sky-300 font-bold">experience</span>  - Historique professionnel (CERES, FID Ambositra, CHU Fianarantsoa)</p>
-            <p><span class="text-sky-300 font-bold">education</span>   - Parcours académique (Master 2026, Licence, Bac C)</p>
-            <p><span class="text-sky-300 font-bold">contact</span>     - Coordonnées de contact, Madagascar & réseaux</p>
-            <p><span class="text-sky-300 font-bold">cv</span>          - Visualiser et télécharger le CV complet</p>
-            <p><span class="text-sky-300 font-bold">clear</span>       - Effacer l'écran du terminal</p>
+            <p><span class="text-sky-300 font-bold">fiaramotion</span>    - Étude de cas détaillée du projet phare (CERES)</p>
+            <p><span class="text-sky-300 font-bold">about</span>          - Présentation de Narindra Rackoto & Master ENI</p>
+            <p><span class="text-sky-300 font-bold">skills</span>         - Synthèse des compétences (Frontend, Backend, IA, DB, Systèmes)</p>
+            <p><span class="text-sky-300 font-bold">projects</span>       - Présentation du projet phare et des modules complémentaires</p>
+            <p><span class="text-sky-300 font-bold">experience</span>     - Historique professionnel (CERES, FID Ambositra, CHU Fianarantsoa)</p>
+            <p><span class="text-sky-300 font-bold">education</span>      - Parcours académique (Master 2026, Licence, Bac C)</p>
+            <p><span class="text-sky-300 font-bold">certifications</span> - Formations spécialisées & certifications</p>
+            <p><span class="text-sky-300 font-bold">contact</span>        - Coordonnées de contact, Madagascar & réseaux</p>
+            <p><span class="text-sky-300 font-bold">cv</span>             - Visualiser et télécharger le CV PDF officiel</p>
+            <p><span class="text-sky-300 font-bold">theme</span>          - Basculer le thème Sombre / Clair</p>
+            <p><span class="text-sky-300 font-bold">whoami</span>         - Informations sur la session active</p>
+            <p><span class="text-sky-300 font-bold">time</span>           - Heure locale de Madagascar (EAT / UTC+3)</p>
+            <p><span class="text-sky-300 font-bold">github</span>         - Ouvrir le profil GitHub</p>
+            <p><span class="text-sky-300 font-bold">linkedin</span>       - Ouvrir le profil LinkedIn</p>
+            <p><span class="text-sky-300 font-bold">clear</span>          - Effacer l'écran du terminal</p>
           </div>
         `);
         break;
